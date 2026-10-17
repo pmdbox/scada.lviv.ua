@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#0f172a" name="theme-color"/>
+<title>SCADA a energetický monitoring | OSS Lvov</title>
+<meta content="OSS navrhuje a implementuje systémy SCADA, dispečink fotovoltaických elektráren a průmyslový energetický monitoring. Lvov, Ukrajina." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<link href="https://scada.lviv.ua/cs/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="cs_CZ" property="og:locale"/>
+<meta content="Outsourcing SCADA Solutions" property="og:site_name"/>
+<meta content="SCADA a energetický monitoring | OSS Lvov" property="og:title"/>
+<meta content="OSS navrhuje a implementuje systémy SCADA, dispečink fotovoltaických elektráren a průmyslový energetický monitoring. Lvov, Ukrajina." property="og:description"/>
+<meta content="https://scada.lviv.ua/cs/" property="og:url"/>
+<meta content="https://scada.lviv.ua/assets/images/Project01/Solar08.jpg.webp" property="og:image"/>
+<meta content="Fotovoltaická elektrárna monitorovaná systémem SCADA od OSS" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="SCADA a energetický monitoring | OSS Lvov" name="twitter:title"/>
+<meta content="OSS navrhuje a implementuje systémy SCADA, dispečink fotovoltaických elektráren a průmyslový energetický monitoring. Lvov, Ukrajina." name="twitter:description"/>
+<meta content="https://scada.lviv.ua/assets/images/Project01/Solar08.jpg.webp" name="twitter:image"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Outsourcing SCADA Solutions",
+  "alternateName": "OSS",
+  "url": "https://scada.lviv.ua/",
+  "logo": "https://scada.lviv.ua/assets/images/osslogo.svg",
+  "description": "OSS navrhuje a implementuje systémy SCADA, dispečink fotovoltaických elektráren a průmyslový energetický monitoring. Lvov, Ukrajina.",
+  "email": "info@scada.lviv.ua",
+  "telephone": "+380931330787",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lvov",
+    "addressCountry": "UA"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HJZBJC6Z9M"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HJZBJC6Z9M');
+    </script>
+<link href="../assets/images/favicon.png" rel="icon" type="image/png"/>
+<link href="../assets/css/tailwind.css" rel="stylesheet"/>
+<link href="https://scada.lviv.ua/cs/" hreflang="en" rel="alternate"/><link href="https://scada.lviv.ua/uk/" hreflang="uk" rel="alternate"/><link href="https://scada.lviv.ua/cs/" hreflang="cs" rel="alternate"/><link href="https://scada.lviv.ua/de/" hreflang="de" rel="alternate"/><link href="https://scada.lviv.ua/cs/" hreflang="x-default" rel="alternate"/></head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased">
+<nav aria-label="Hlavní nabídka" class="site-nav fixed inset-x-0 top-0 z-50 text-white">
+<div class="site-nav-inner mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
+<a aria-label="Domů" class="shrink-0" href="https://scada.lviv.ua/cs/">
+<img alt="OSS logo" class="site-nav-logo w-auto" height="40" src="../assets/images/osslogo.svg" width="58"/>
+</a>
+<button aria-controls="site-menu" aria-expanded="false" aria-label="Відкрити меню" class="menu-toggle" type="button">
+<svg aria-hidden="true" class="menu-toggle-icon" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+<ul class="site-menu flex items-center gap-3 text-[0.8125rem] font-medium tracking-wide sm:gap-6 sm:text-[1.09375rem]" id="site-menu">
+<li>
+<a class="menu-link transition-opacity hover:opacity-75" href="#home">
+<svg aria-hidden="true" class="home-icon" viewbox="0 0 640 640">
+<path d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM304 384L336 384C362.5 384 384 405.5 384 432L384 528L256 528L256 432C256 405.5 277.5 384 304 384z" fill="currentColor"></path>
+</svg>
+<span class="home-label">DOMŮ</span>
+</a>
+</li>
+<li><a class="menu-link whitespace-nowrap transition-opacity hover:opacity-75" href="#pv-stations">FVE</a></li>
+<li><a class="menu-link whitespace-nowrap transition-opacity hover:opacity-75" href="#monitoring">MONITORING</a></li>
+<li><a class="menu-link whitespace-nowrap transition-opacity hover:opacity-75" href="#projects">PROJEKTY</a></li>
+<li><a class="menu-link whitespace-nowrap transition-opacity hover:opacity-75" href="#contacts">KONTAKTY</a></li>
+<li class="language-options ml-1 sm:ml-2">
+<ul class="language-options-list">
+<li>
+<a aria-label="Українська версія сайту" class="menu-link" href="/uk/" title="Українська">
+<svg aria-hidden="true" class="h-4 w-6 rounded-sm" role="img" viewbox="0 0 24 16">
+<rect fill="#0057B7" height="8" width="24"></rect>
+<rect fill="#FFD700" height="8" width="24" y="8"></rect>
+</svg>
+</a>
+</li>
+
+<li>
+<a aria-label="Deutsche Website" class="menu-link" href="/de/" title="Deutsch">
+<svg aria-hidden="true" class="h-4 w-6 rounded-sm" role="img" viewbox="0 0 24 16">
+<rect fill="#FFCE00" height="16" width="24"></rect>
+<rect fill="#DD0000" height="10.67" width="24"></rect>
+<rect fill="#000000" height="5.33" width="24"></rect>
+</svg>
+</a>
+</li>
+<li><a aria-label="Anglická verze webu" class="menu-link" href="/" title="English">
+<svg aria-hidden="true" class="h-4 w-6 rounded-sm" role="img" viewbox="0 0 24 16">
+<rect fill="#012169" height="16" width="24"></rect>
+<path d="M0 0L24 16M24 0L0 16" stroke="#fff" stroke-width="4"></path>
+<path d="M0 0L24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.5"></path>
+<path d="M12 0V16M0 8H24" stroke="#fff" stroke-width="6"></path>
+<path d="M12 0V16M0 8H24" stroke="#C8102E" stroke-width="3"></path>
+</svg>
+</a></li></ul>
+</li>
+</ul>
+</div>
+</nav>
+<header class="page-banner flex h-dvh items-center justify-center px-6 pb-8 pt-20" id="home">
+</header>
+<section aria-labelledby="core-message" class="bg-[#374151] px-6 py-20 text-white sm:py-28">
+<div class="mx-auto max-w-6xl translate-x-5 border-l-4 border-[#9FD34C] pl-6 sm:translate-x-[38px] sm:pl-10">
+<p class="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[#9FD34C] sm:text-sm">
+          SCADA <span aria-hidden="true" class="px-2 text-slate-500">/</span> Monitoring <span aria-hidden="true" class="px-2 text-slate-500">/</span> REPORTING
+        </p>
+<h1 class="max-w-5xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl" id="core-message">
+          Systémy sběru dat, monitoringu a řízení
+          <span class="mt-2 block text-[#9FD34C]">pro fotovoltaické elektrárny, bateriová úložiště a průmyslové provozy.</span>
+</h1>
+</div>
+</section>
+<section aria-labelledby="pv-stations-title" class="bg-slate-50 px-6 py-20 sm:py-24" id="pv-stations">
+<div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+<div>
+<p class="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Fotovoltaická energie</p>
+<h2 class="text-3xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="pv-stations-title">
+            SCADA pro fotovoltaické elektrárny
+          </h2>
+<p class="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">Sledujte výkon elektrárny, výrobu energie a stav střídačů v jednom přehledném rozhraní.</p>
+<ul class="mt-6 space-y-3 text-base leading-none text-slate-700 sm:text-lg">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Sběr dat v reálném čase a přehled elektrárny</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Řízení činného výkonu celé elektrárny</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Provozní režimy střídačů</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Grafy provozu elektrárny, trendy výroby a reporty</span></li>
+</ul>
+<button class="mt-8 inline-flex items-center rounded-lg border border-[#658b2e] px-5 py-3 text-sm font-semibold text-[#4f7024] transition-colors hover:bg-[#658b2e] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="pv-scada-dialog" type="button">
+            Více informací
+          </button>
+</div>
+<img alt="SCADA dashboard for monitoring a solar power plant" class="w-full" height="850" loading="lazy" src="../assets/images/scada1-1.png.webp" width="1400"/>
+</div>
+</section>
+<section aria-labelledby="industrial-monitoring-title" class="bg-slate-200 px-6 py-20 sm:py-24" id="monitoring">
+<div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+<img alt="Industrial monitoring dashboard with energy trends and reports" class="order-2 w-full lg:order-1" height="900" loading="lazy" src="../assets/images/grafana3-screenshot.png.webp" width="1400"/>
+<div class="order-1 lg:order-2">
+<p class="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Průmyslové provozy</p>
+<h2 class="text-3xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="industrial-monitoring-title">
+            Průmyslový monitoring a reporting
+          </h2>
+<p class="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">Propojujeme data ze zařízení a procesů, aby týmy lépe rozuměly provozu, rozpoznaly změny a mohly se informovaně rozhodovat.</p>
+<ul class="mt-6 space-y-3 text-base leading-none text-slate-700 sm:text-lg">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Centralizovaný sběr dat z průmyslových zařízení</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Aktuální dashboardy, historické trendy a přehledy událostí</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Přehledné reporty pro provozní analýzu</span></li>
+</ul>
+<button class="mt-8 inline-flex items-center rounded-lg border border-[#658b2e] px-5 py-3 text-sm font-semibold text-[#4f7024] transition-colors hover:bg-[#658b2e] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="industrial-monitoring-dialog" type="button">
+            Více informací
+          </button>
+</div>
+</div>
+</section>
+<section aria-labelledby="projects-title" class="bg-slate-50 px-6 py-20 sm:py-24" id="projects">
+<div class="mx-auto max-w-6xl">
+<p class="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Realizované projekty</p>
+<h2 class="max-w-3xl text-3xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="projects-title">
+          Vybrané projekty SCADA a monitoringu
+        </h2>
+<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="project-grid">
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Dashboard elektrárny a ovládání" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project01/Solar02.jpg.webp"/>
+<div class="p-6 sm:p-8">
+<div class="flex items-center justify-between gap-3">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500" data-project-number="">Projekt 01</p>
+<span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Fotovoltaika</span>
+</div>
+<h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl">
+<button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-pv-dialog" type="button">
+                  Lokální SCADA pro fotovoltaickou elektrárnu o výkonu 6 MW
+                </button>
+</h3>
+</div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Přehled aktuálních elektrických parametrů střídače" class="project-card-image aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project02/Huawei.00.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Projekt 02</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Fotovoltaika</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-huawei-dialog" type="button">SmartObject střídače Huawei SUN2000 pro Zenon SCADA</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Centrální přehled fotovoltaických elektráren" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project03/CE.00.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Projekt 03</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Fotovoltaika</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-dispatch-dialog" type="button">SCADA pro dispečink skupiny fotovoltaických elektráren</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Dashboard využití zařízení" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project04/Vodalend_OEE_00.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Projekt 04</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Průmysl</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-oee-dialog" type="button">Využití zařízení (OEE)</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Přehled elektrických měření" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project05/Baza00.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Projekt 05</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Energetický monitoring</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-power-monitoring-dialog" type="button">Monitoring napájení výrobního areálu s více zdroji a odběrnými místy</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Report spotřeby energie" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project06/VD_Energy_00.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Projekt 06</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Energetický monitoring</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-industry-power-dialog" type="button">Monitoring napájení průmyslového podniku</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Přehled systému vytápění" class="project-card-image aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project07/Elgraph.01.png.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Projekt 07</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Průmysl</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-heating-dialog" type="button">SCADA systém vytápění v tiskárně</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Přehled monitoringu klimatu" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project08/PF01.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Projekt 08</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Farmacie</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-pharma-climate-dialog" type="button">SCADA systém klimatizace ve farmaceutickém závodě</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Dashboard monitoringu napájení" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project11/GL_01.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Projekt 09</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Energetický monitoring</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-office-center-dialog" type="button">Monitoring napájení administrativního centra</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Přehled monitoringu výroby" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project10/AKO_00.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Projekt 10</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Průmysl</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" data-dialog-target="project-stamping-press-dialog" type="button">Monitoring výroby na lisovacím lisu</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Historický teplotní trend" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project09/KRT_01.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Projekt 11</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Průmysl</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" data-dialog-target="project-furnace-dialog" type="button">Monitoring kalicí pece</button></h3></div>
+</article>
+</div>
+</div>
+</section>
+<dialog aria-labelledby="pv-scada-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="pv-scada-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<header>
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Fotovoltaická energie</p>
+<h2 class="max-w-3xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="pv-scada-dialog-title">SCADA pro fotovoltaické elektrárny</h2>
+<p class="mt-5 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">S rostoucím počtem a výkonem solárních elektráren je správa různých střídačů a dalších zařízení pomocí samostatných nástrojů výrobců stále složitější. Vzdálené monitorovací platformy mohou být navíc závislé na připojení k internetu.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">U středních a velkých elektráren spojuje lokální SCADA monitoring a řízení celé elektrárny do jednoho systému. Při vhodných provozních podmínkách se investice může vrátit během prvních týdnů či měsíců provozu.</p>
+</header>
+<section aria-labelledby="zenon-platform-title" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+<div>
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-[#9FD34C]">Naše platforma</p>
+<h3 class="mt-2 text-xl font-bold sm:text-2xl" id="zenon-platform-title">COPA-DATA zenon</h3>
+<p class="mt-2 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-base">Zenon používáme jako hlavní platformu pro tvorbu otevřených energetických aplikací založených na standardech.</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<img alt="COPA-DATA logo" class="h-14 w-52 rounded-lg bg-white px-3 py-2 object-contain" height="160" loading="lazy" src="../assets/images/copa-data-vector-logo2.svg" width="652"/>
+<a class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-lg border border-white/30 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-[#9FD34C] hover:text-[#9FD34C] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9FD34C]" href="https://www.copadata.com/" rel="noopener noreferrer" target="_blank">
+                Navštívit COPA-DATA
+                <span aria-hidden="true" class="ml-2">↗</span>
+</a>
+</div>
+</div>
+<div class="mt-6 border-t border-white/15 pt-5">
+<h4 class="text-xs font-bold uppercase tracking-[0.18em] text-slate-300">Klíčová odvětví</h4>
+<ul class="mt-3 flex flex-wrap gap-2">
+<li class="rounded-full border border-white/20 px-3 py-1.5 text-sm">Potravinářství a nápoje</li>
+<li class="rounded-full border border-white/20 px-3 py-1.5 text-sm">Energetika a infrastruktura</li>
+<li class="rounded-full border border-white/20 px-3 py-1.5 text-sm">Farmacie</li>
+<li class="rounded-full border border-white/20 px-3 py-1.5 text-sm">Automobilový průmysl</li>
+</ul>
+</div>
+<div aria-labelledby="energy-protocols-title" class="mt-6 border-t border-white/15 pt-5">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-[#9FD34C]">Otevřené standardy</p>
+<h4 class="mt-2 text-lg font-bold sm:text-xl" id="energy-protocols-title">Integrace energetických systémů</h4>
+<p class="mt-3 max-w-3xl text-sm leading-relaxed text-slate-200 sm:text-base">Zenon podporuje běžné energetické protokoly pro integraci zařízení elektrárny a externích systémů.</p>
+<ul class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+<li class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">Modbus / SunSpec</li>
+<li class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">DNP3</li>
+<li class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">MQTT</li>
+<li class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">IEC 60870-5 (101/103/104)</li>
+<li class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">IEC 61850</li>
+<li class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">GOOSE</li>
+</ul>
+</div>
+</section>
+<section aria-label="Plant integration and local SCADA benefits" class="mt-10 grid gap-8 lg:grid-cols-2">
+<div>
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-[#658b2e]">Zkušenosti se zařízeními různých výrobců</p>
+<h3 class="mt-2 text-xl font-bold text-[#374151] sm:text-2xl">Jeden systém pro celou elektrárnu</h3>
+<p class="mt-3 text-base leading-relaxed text-slate-600">Máme zkušenosti s integrací elektráren se střídači Huawei a Fronius, zařízeními Schneider Electric i méně obvyklými značkami střídačů.</p>
+<ul aria-label="Supported inverter manufacturers" class="mt-5 flex flex-wrap items-end gap-x-5 gap-y-4">
+<li>
+<figure class="flex flex-col items-center gap-1">
+<img alt="Huawei" class="h-16 w-28 object-contain" height="240" loading="lazy" src="../assets/images/huawei.svg" width="240"/>
+<figcaption class="text-xs font-medium text-slate-600">Huawei</figcaption>
+</figure>
+</li>
+<li>
+<figure class="flex flex-col items-center gap-1">
+<img alt="Fronius" class="h-16 w-28 object-contain" height="240" loading="lazy" src="../assets/images/fronius.svg" width="240"/>
+<figcaption class="text-xs font-medium text-slate-600">Fronius</figcaption>
+</figure>
+</li>
+<li>
+<figure class="flex flex-col items-center gap-1">
+<img alt="Schneider Electric" class="h-16 w-28 object-contain" height="240" loading="lazy" src="../assets/images/se.svg" width="240"/>
+<figcaption class="text-xs font-medium text-slate-600">Schneider Electric</figcaption>
+</figure>
+</li>
+</ul>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-[#658b2e]">Proč lokální SCADA</p>
+<h3 class="mt-2 text-xl font-bold text-[#374151] sm:text-2xl">Provozujte s lepším přehledem</h3>
+<ul class="mt-4 space-y-2 text-base leading-relaxed text-slate-700">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Řídicí scénáře pro elektrárnu a koordinované řízení střídačů různých výrobců</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Jedno rozhraní pro střídače a další zařízení elektrárny</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Monitorování teploty transformátorů a rozvoden</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Rychlý přístup k diagnostice a místnímu provozu bez internetu</span></li>
+</ul>
+</div>
+</section>
+<section aria-labelledby="scada-features-title" class="mt-10">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-[#658b2e]">Možnosti systému</p>
+<h3 class="mt-2 text-xl font-bold text-[#374151] sm:text-2xl" id="scada-features-title">Přizpůsobte systém svému provozu</h3>
+<div class="mt-5 grid gap-5 lg:grid-cols-2">
+<div class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+<h4 class="text-lg font-bold text-[#374151]">Základní funkce</h4>
+<ul class="mt-4 space-y-3 text-base leading-relaxed text-slate-700">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Hlavní dashboard elektrárny s ovládacími funkcemi</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Samostatné obrazovky střídačů, vypínačů, stringových skříní a analyzátorů sítí včetně nastavení</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Chronologický seznam událostí (CEL) a seznam alarmových zpráv (AML)</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Historické trendy a údaje v reálném čase</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Nastavení aplikace</span></li>
+</ul>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+<h4 class="text-lg font-bold text-[#374151]">Volitelné funkce</h4>
+<ul class="mt-4 space-y-3 text-base leading-relaxed text-slate-700">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Jednopólové schéma (SLD) a stav IT sítě</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Statistiky, řídicí sekvence a reporty</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Vzdálený přístup</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Cloudový hosting SCADA</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section aria-labelledby="scada-integration-title" class="mt-10 rounded-2xl bg-[#e8efdc] p-5 sm:p-6">
+<h3 class="text-lg font-bold text-[#374151] sm:text-xl" id="scada-integration-title">Integrace mimo elektrárnu</h3>
+<p class="mt-2 text-base leading-relaxed text-slate-700">Podle potřeby lze SCADA integrovat s platformami třetích stran, včetně exportu dat do externích databází nebo cloudových služeb pro vizualizaci a analýzu.</p>
+</section>
+<section aria-label="Solar plant SCADA screenshots" class="mt-10">
+<div class="grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Přehled elektrárny a ovládání" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/scada1-1.png.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Přehled elektrárny a ovládání</figcaption>
+</figure>
+<figure>
+<img alt="Grafy elektrárny a data zařízení" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/scada1-2.png.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Grafy elektrárny a data zařízení</figcaption>
+</figure>
+</div>
+</section>
+</div>
+</dialog>
+<dialog aria-labelledby="industrial-monitoring-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="industrial-monitoring-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-0 sm:px-10 sm:pb-0">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Průmyslové provozy</p>
+<h2 class="text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="industrial-monitoring-dialog-title">Průmyslový monitoring a reporting</h2>
+<p class="mt-5 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Sběr, archivace a vizualizace výrobních dat jsou důležité pro podniky všech velikostí a oborů: od základního měření spotřeby elektřiny, které částečně zajišťují stávající systémy AMR, až po hodnocení efektivity výroby (OEE). Pravidelně sledovat spotřebu zdrojů potřebují také kancelářská a obchodní centra. Důležité je rovněž monitorovat stav zařízení a počítačových sítí, které přenášejí data na servery. K řešení těchto úloh používáme open-source software a moderní postupy.</p>
+<section aria-label="Open software and platforms" class="mt-8">
+<div class="grid grid-cols-4 justify-items-center gap-x-4 gap-y-5 py-2">
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="Ubuntu — open official website in a new tab" href="https://ubuntu.com/" rel="noopener noreferrer" target="_blank">
+<img alt="Operační systém" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-ubuntu.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Operační systém</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="Docker — open official website in a new tab" href="https://www.docker.com/" rel="noopener noreferrer" target="_blank">
+<img alt="Virtualizační platforma" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-docker.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Virtualizační platforma</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="PostgreSQL — open official website in a new tab" href="https://www.postgresql.org/" rel="noopener noreferrer" target="_blank">
+<img alt="Databáze" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-postgresql.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Databáze</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="Zabbix — open official website in a new tab" href="https://www.zabbix.com/" rel="noopener noreferrer" target="_blank">
+<img alt="Monitoring IT infrastruktury" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-zabbix.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Monitoring IT infrastruktury</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="Grafana — open official website in a new tab" href="https://grafana.com/" rel="noopener noreferrer" target="_blank">
+<img alt="Vizualizace dat" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-grafana.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Vizualizace dat</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="Power BI — open official website in a new tab" href="https://www.microsoft.com/en-us/power-platform/products/power-bi/" rel="noopener noreferrer" target="_blank">
+<img alt="Tvorba reportů" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-powerbi.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Tvorba reportů</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="Python — open official website in a new tab" href="https://www.python.org/" rel="noopener noreferrer" target="_blank">
+<img alt="Skriptování" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-python.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Skriptování</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="C# — open official website in a new tab" href="https://dotnet.microsoft.com/languages/csharp" rel="noopener noreferrer" target="_blank">
+<img alt="Aplikační vývoj" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-csharp.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Aplikační vývoj</figcaption>
+</figure>
+</div>
+</section>
+<p class="mt-8 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">S typickými úlohami monitoringu, jako je sledování spotřeby elektřiny, teploty a vlhkosti, vám rádi poradíme a pomůžeme vybrat i nainstalovat potřebná zařízení.</p>
+<section aria-label="Monitoring dashboards and reports" class="mt-4">
+<img alt="Industrial monitoring charts and reports" class="mx-auto block w-2/3" data-image-preview="" loading="lazy" src="../assets/images/grafana2-screenshot.png.webp"/>
+</section>
+</div>
+</dialog>
+<dialog aria-labelledby="project-pv-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-pv-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti projektu" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Solární energie · 6 MW</p>
+<h2 class="max-w-3xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-pv-dialog-title">Lokální SCADA pro fotovoltaickou elektrárnu o výkonu 6 MW</h2>
+<section aria-labelledby="project-pv-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-pv-parameters">Parametry projektu</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Verze Zenon</dt>
+<dd class="mt-1 font-semibold text-slate-100">11</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Počet proměnných</dt>
+<dd class="mt-1 font-semibold text-slate-100">~4000</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Komunikační protokoly</dt>
+<dd class="mt-1 font-semibold text-slate-100">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://uk.wikipedia.org/wiki/Modbus" rel="noopener noreferrer" target="_blank">Modbus TCP</a>
+</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Solární střídače</dt>
+<dd class="mt-1 font-semibold text-slate-100">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://solar.se.com/eu/wp-content/uploads/sites/4/2021/11/Conext-CL-60E-Solution-Guide-975-0782-01-01_ENG.pdf" rel="noopener noreferrer" target="_blank">Conext CL-60E od Schneider Electric, 95 kusů</a>
+</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Další zařízení</dt>
+<dd class="mt-1 flex flex-col gap-2 font-semibold text-slate-100 sm:flex-row sm:gap-6">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://emea.socomec.com/en/p/diris-a-30" rel="noopener noreferrer" target="_blank">Socomec Diris A30</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://mikrotik.com/product/knot" rel="noopener noreferrer" target="_blank">Mikrotik</a>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-pv-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-pv-description">Popis projektu</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            Základní projekt lokálního <a class="text-[#4f7024] underline decoration-[#9FD34C] underline-offset-4 hover:text-[#374151]" href="https://uk.wikipedia.org/wiki/SCADA" rel="noopener noreferrer" target="_blank">SCADA</a> systému pro fotovoltaickou elektrárnu je založen na hotovém Application Setu od společnosti <a class="text-[#4f7024] underline decoration-[#9FD34C] underline-offset-4 hover:text-[#374151]" href="https://www.copadata.com/en/" rel="noopener noreferrer" target="_blank">Copa Data</a>.
+          </p>
+<p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">Bylo implementováno nezbytné minimum pro provoz elektrárny:</p>
+<ul class="mt-4 grid gap-x-8 gap-y-3 py-16 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Dashboard se základními údaji elektrárny: výkon, elektroměry, seznam střídačů a jejich stav.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Rozšířený panel střídače: výkon, střídavé a stejnosměrné proudy a napětí, vyrobená energie, sériové číslo a dekódované stavové a chybové registry.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Jednopólové schéma (<a class="text-[#4f7024] underline decoration-[#9FD34C] underline-offset-4 hover:text-[#374151]" href="https://en.wikipedia.org/wiki/Single-line_diagram" rel="noopener noreferrer" target="_blank">SLD</a>) pro monitoring rozvodny: výkon, elektroměry importu/exportu, proudy, napětí (více než 50 parametrů) a teplota transformátoru.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Řízení provozního režimu celé elektrárny i jednotlivých střídačů.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Záznam alarmů a událostí.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Historian.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Trendy.</span></li>
+</ul>
+<p class="mt-5 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            Konfigurace síťových zařízení, vzdálený přístup a monitoring sítě jsou rovněž realizovány pomocí <a class="text-[#4f7024] underline decoration-[#9FD34C] underline-offset-4 hover:text-[#374151]" href="https://www.zabbix.com/" rel="noopener noreferrer" target="_blank">Zabbix</a> a <a class="text-[#4f7024] underline decoration-[#9FD34C] underline-offset-4 hover:text-[#374151]" href="https://grafana.com/" rel="noopener noreferrer" target="_blank">Grafana</a>.
+          </p>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Trend výroby" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project01/Solar01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Trend výroby</figcaption>
+</figure>
+<figure>
+<img alt="Dashboard elektrárny a ovládání" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project01/Solar02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Dashboard elektrárny a ovládání</figcaption>
+</figure>
+<figure>
+<img alt="Informace o střídačích a výkonu" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project01/Solar03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Informace o střídačích a výkonu</figcaption>
+</figure>
+<figure>
+<img alt="Fotovoltaická elektrárna" class="aspect-video w-full object-cover" data-image-preview="" loading="lazy" src="../assets/images/Project01/Solar08.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Fotovoltaická elektrárna</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-huawei-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-huawei-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti projektu" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Zenon · SmartObject</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-huawei-dialog-title">SmartObject střídače Huawei SUN2000 pro Zenon SCADA</h2>
+<section aria-labelledby="project-huawei-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-huawei-parameters">Parametry projektu</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Řada střídačů</dt>
+<dd class="mt-1 font-semibold text-slate-100"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://solar.huawei.com/en/products/utility/" rel="noopener noreferrer" target="_blank">Huawei SUN2000</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Počet proměnných pro každý střídač</dt>
+<dd class="mt-1 font-semibold text-slate-100">~150</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Komunikační protokol</dt>
+<dd class="mt-1 font-semibold text-slate-100"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.modbus.org/introduction-to-modbus" rel="noopener noreferrer" target="_blank">Modbus TCP/RTU</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Minimální verze Zenon SCADA</dt>
+<dd class="mt-1 font-semibold text-slate-100">8.20</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-huawei-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-huawei-description">Popis projektu</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">SmartObject je technologie Zenonu pro snadné opakované použití implementovaných objektů, podobně jako tříd v běžném programování. Může obsahovat proměnné, obrazovky a jejich šablony, funkce, logiku a další části projektu.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Po vložení instance SmartObject do projektu se proměnné, funkce, obrazovky a další komponenty automaticky vytvoří a očíslují. Změny, například přidání proměnných, se pak automaticky promítnou do všech instancí.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">SmartObject pro střídače řady Huawei SUN2000 poskytuje základní funkce potřebné pro diagnostiku a řízení:</p>
+<ul class="mt-5 grid gap-x-8 gap-y-3 py-16 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Přehledová obrazovka s proudem, napětím, frekvencí a údaji elektroměru střídače.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Stav stejnosměrných vstupů včetně napětí a proudu.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Obrazovka ukazatele výkonu s grafem.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Podrobnosti o stavu střídače: teplota, izolační odpor, účinnost, provozní režim a chybové kódy.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Dekódování chybových registrů s indikací stavu.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Obrazovka nastavení a ovládání.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+<figure>
+<img alt="Přehled aktuálních elektrických parametrů střídače" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Přehled aktuálních elektrických parametrů střídače</figcaption>
+</figure>
+<figure>
+<img alt="Obrazovka výkonu střídače" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Obrazovka výkonu střídače</figcaption>
+</figure>
+<figure>
+<img alt="Obrazovka napětí a proudu DC vstupů" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Obrazovka napětí a proudu DC vstupů</figcaption>
+</figure>
+<figure>
+<img alt="Obrazovka stavu střídače" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.06.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Obrazovka stavu střídače</figcaption>
+</figure>
+<figure>
+<img alt="Nastavení střídače" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.08.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Nastavení střídače</figcaption>
+</figure>
+<figure>
+<img alt="Obrazovka dekódování chyb" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.12.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Obrazovka dekódování chyb</figcaption>
+</figure>
+<figure>
+<img alt="Obrazovka stavu střídače a chyb" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.13.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Obrazovka stavu střídače a chyb</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-dispatch-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-dispatch-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti projektu" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Solární energie · Centrální dispečink</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-dispatch-dialog-title">SCADA pro dispečink skupiny fotovoltaických elektráren</h2>
+<section aria-labelledby="project-dispatch-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-dispatch-parameters">Parametry projektu</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Počet střídačů</dt>
+<dd class="mt-1 font-semibold text-slate-100">&gt; 2,000 (~100 MW)</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Počet elektráren</dt>
+<dd class="mt-1 font-semibold text-slate-100">&gt; 20</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Verze Zenon</dt>
+<dd class="mt-1 font-semibold text-slate-100">8.20</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Počet proměnných</dt>
+<dd class="mt-1 font-semibold text-slate-100">~100,000</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Řady fotovoltaických střídačů</dt>
+<dd class="mt-2 flex flex-col gap-2 font-semibold text-slate-100 sm:flex-row sm:gap-6">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/snapinverter-symo-primo-eco-/eco/fronius-eco-27-0-3-s-wlanlanwebserver" rel="noopener noreferrer" target="_blank">Fronius ECO</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://solar.huawei.com/en/products/utility/" rel="noopener noreferrer" target="_blank">Huawei SUN2000</a>
+</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Komunikační protokoly</dt>
+<dd class="mt-2 grid gap-x-4 gap-y-2 font-semibold sm:grid-cols-2">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.modbus.org/introduction-to-modbus" rel="noopener noreferrer" target="_blank">Modbus TCP/RTU</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://sunspec.org/specifications/" rel="noopener noreferrer" target="_blank">SunSpec</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://webstore.iec.ch/en/publication/3746" rel="noopener noreferrer" target="_blank">IEC 60870-5-104</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://webstore.iec.ch/en/publication/6397" rel="noopener noreferrer" target="_blank">IEC 62056 (DLMS/COSEM)</a>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-dispatch-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-dispatch-description">Popis projektu</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Dispečerský systém geograficky rozptýlených fotovoltaických elektráren je postaven na platformě Zenon SCADA.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Hlavní výhodou oproti hotovým systémům výrobců zařízení je možnost současně monitorovat a řídit veškeré vybavení: střídače, analyzátory, řadiče, ochranná relé, vypínače, elektroměry i meteorologické stanice.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Systém propojuje samostatné projekty fotovoltaických elektráren do jednoho globálního projektu. Zajišťuje centrální řízení, výpočty klíčových ukazatelů, záznam událostí a alarmů, vizualizaci grafů a další funkce. Každá elektrárna má vlastní typy zařízení, šablony, nastavení a provozní algoritmy, které lze měnit nezávisle na ostatních.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Pokud mají elektrárny typické uspořádání, což je v rámci jedné organizace běžné, lze novou stanici obvykle přidat zkopírováním existujícího projektu a drobnou úpravou nastavení. Připojení další elektrárny do SCADA tak může trvat jen několik hodin.</p>
+</section>
+<section aria-labelledby="project-dispatch-features" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-dispatch-features">Funkce</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Dashboardy pro vizualizaci klíčových ukazatelů elektrárny.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Souhrnný dashboard pro správu elektráren.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Záznam alarmů a událostí.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Historian.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Trendy.</span></li>
+</ul>
+</section>
+<section aria-labelledby="project-dispatch-plant-features" class="mt-4">
+<h3 class="text-xl font-bold text-[#374151]" id="project-dispatch-plant-features">Každý projekt elektrárny obsahuje:</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Interaktivní schéma s mapou střídačů.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Jednopólové schéma (SLD).</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Podrobný panel střídače s výkonem, střídavými a stejnosměrnými proudy a napětími, vyrobenou energií, sériovým číslem a dekódovanými registry stavu a chyb.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Okno pro řízení celé elektrárny i jednotlivých sekcí nebo rozvoden.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Okno nastavení.</span></li>
+</ul>
+</section>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Projekt zahrnuje také IT/OT infrastrukturu a vzdálená připojení, sběr, ukládání, analýzu a vizualizaci dat o jednotlivých střídačích, fotovoltaických elektrárnách a síti.</p>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Centrální přehled fotovoltaických elektráren" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project03/CE.00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Centrální přehled fotovoltaických elektráren</figcaption>
+</figure>
+<figure>
+<img alt="Jednopólové schéma (SLD)" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project03/CE.02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Jednopólové schéma (SLD)</figcaption>
+</figure>
+<figure>
+<img alt="Mapa střídačů" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project03/CE.03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Mapa střídačů</figcaption>
+</figure>
+<figure>
+<img alt="Historický trend předpokládané a skutečné výroby energie" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project03/CE.04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Historický trend předpokládané a skutečné výroby energie</figcaption>
+</figure>
+<figure>
+<img alt="Historické trendy napětí na straně VN" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project03/CE.07.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Historické trendy napětí na straně VN</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-oee-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-oee-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti projektu" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Průmyslový monitoring · OEE</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-oee-dialog-title">Využití zařízení (OEE)</h2>
+<section aria-labelledby="project-oee-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-oee-parameters">Parametry projektu</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Počet měřicích bodů</dt>
+<dd class="mt-1 font-semibold text-slate-100">&gt; 15</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Analyzátory elektrické sítě</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://apac.socomec.com/en/p/diris-a-10" rel="noopener noreferrer" target="_blank">Socomec DIRIS A10</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://emea.socomec.com/en/p/diris-a-20" rel="noopener noreferrer" target="_blank">Socomec DIRIS A20</a>
+</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Síťová zařízení</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://mikrotik.com/product/knot" rel="noopener noreferrer" target="_blank">MikroTik KNOT</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Software a nástroje</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://ubuntu.com/server" rel="noopener noreferrer" target="_blank">Ubuntu Linux</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.zabbix.com/" rel="noopener noreferrer" target="_blank">Zabbix</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://grafana.com/" rel="noopener noreferrer" target="_blank">Grafana</a>
+<span>Python</span>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-oee-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-oee-description">Popis projektu</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Využití výrobních zařízení, jako jsou CNC stroje, lisy a lakovací kabiny, se sleduje měřením elektrického proudu a určováním provozního režimu podle jeho velikosti.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Každý měřicí bod může být ve třech režimech: vypnuto, nečinný stav nebo provoz. Analýza proudů z analyzátorů sítě určuje prostoje a dobu provozu během směny, dne či týdne. Výsledky se zobrazují v přehledných dashboardech v reálném čase.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">V terminologii OEE (Overall Equipment Effectiveness) systém počítá ukazatel dostupnosti, který je základem dalších výpočtů OEE. Dostupnost ovlivňují různé prostoje, například poruchy, nedostatek surovin nebo pozornosti obsluhy.</p>
+</section>
+<section aria-labelledby="project-oee-advantages" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-oee-advantages">Výhody</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Automatické rozpoznání provozního režimu eliminuje lidský faktor a nevyžaduje zásah obsluhy.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Není nutný zásah do elektrického obvodu stroje.</span></li>
+<li class="flex gap-3 sm:col-span-2"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Lze ji propojit s ampérmetry, elektroměry a analyzátory sítí s digitálním výstupem.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Dashboard využití zařízení" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project04/Vodalend_OEE_00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Dashboard využití zařízení</figcaption>
+</figure>
+<figure>
+<img alt="Přehled využití zařízení" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project04/Vodalend_OEE_01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Přehled využití zařízení</figcaption>
+</figure>
+<figure>
+<img alt="Přehled využití zařízení" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project04/Vodalend_OEE_02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Přehled využití zařízení</figcaption>
+</figure>
+<figure>
+<img alt="Mapa provozních režimů zařízení" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project04/Vodalend_OEE_03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Mapa provozních režimů zařízení</figcaption>
+</figure>
+<figure>
+<img alt="Obrazovka monitoringu OEE 5" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project04/Vodalend_OEE_04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Obrazovka monitoringu OEE 5</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-power-monitoring-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-power-monitoring-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti projektu" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Průmyslový energetický monitoring</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-power-monitoring-dialog-title">Monitoring napájení výrobního areálu s více zdroji a odběrnými místy</h2>
+<section aria-labelledby="project-power-monitoring-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-power-monitoring-parameters">Parametry projektu</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Počet měřicích bodů</dt>
+<dd class="mt-1 font-semibold text-slate-100">&gt; 10</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Analyzátory elektrické sítě</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://emea.socomec.com/en/p/diris-a-20" rel="noopener noreferrer" target="_blank">Socomec DIRIS A20</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://emea.socomec.com/en/p/diris-digiware-d" rel="noopener noreferrer" target="_blank">Socomec Digiware</a>
+</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Síťová zařízení</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://mikrotik.com/product/knot" rel="noopener noreferrer" target="_blank">MikroTik KNOT</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Software a nástroje</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://ubuntu.com/server" rel="noopener noreferrer" target="_blank">Ubuntu Linux</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://docs.timescale.com/self-hosted/latest/" rel="noopener noreferrer" target="_blank">TimescaleDB</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://grafana.com/" rel="noopener noreferrer" target="_blank">Grafana</a>
+<span>Python</span>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-power-monitoring-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-power-monitoring-description">Konfigurace systému</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Monitorovací systém pokrývá výrobní areál napájený z více zdrojů a zásobující více odběratelů. Elektrická zařízení zahrnují:</p>
+<ul class="mt-2 grid gap-x-8 gap-y-2 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Nízkonapěťový přívod z rozvodny.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Generátor.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Fotovoltaická elektrárna.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Automatický přepínač zdrojů (ATS).</span></li>
+<li class="flex gap-3 sm:col-span-2"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Měřicí body odběratelů.</span></li>
+</ul>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Přívody z rozvodny, generátoru a fotovoltaické elektrárny monitorují analyzátory sítě Socomec DIRIS A20 s komunikačními moduly RS485 přes Modbus RTU. Řadič ATS je připojen přes bránu Modbus RTU/TCP MikroTik KNOT. Měřicí body odběratelů sleduje systém Socomec Digiware.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Skripty Python zapisují hodnoty parametrů přímo do databáze na samostatném virtuálním stroji.</p>
+</section>
+<section aria-labelledby="project-power-monitoring-measurements" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-power-monitoring-measurements">Parametry sbírané v každém měřicím bodě</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-2 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Fázová napětí.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Sdružená napětí.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Fázové proudy.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Činný a jalový výkon po fázích.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Průměrné napětí a proud.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Celkový činný, jalový a zdánlivý výkon.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Celkové harmonické zkreslení (THD) napětí a proudu.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Účiník, celkový i po fázích.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Počítadla importované a exportované činné, jalové a zdánlivé energie.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Kvalita spojení.</span></li>
+</ul>
+</section>
+<section aria-labelledby="project-power-monitoring-ats" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-power-monitoring-ats">Parametry ATS ukládané do databáze</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-2 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Provozní režim.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Stavový kód.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Chybový kód.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Napětí na obou vstupech.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Stav vstupů/výstupů.</span></li>
+</ul>
+</section>
+<section aria-labelledby="project-power-monitoring-dashboards" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-power-monitoring-dashboards">Dashboardy Grafana</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-2 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Aktuální elektrické parametry odběrných míst.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Aktuální parametry ATS a generátoru.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Trendy a historická data.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Report spotřeby energie pro každý měřicí bod.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Přehled elektrických měření" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project05/Baza00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Přehled elektrických měření</figcaption>
+</figure>
+<figure>
+<img alt="Monitoring síťového přívodu, generátoru a ATS" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project05/Baza01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Monitoring síťového přívodu, generátoru a ATS</figcaption>
+</figure>
+<figure>
+<img alt="Report spotřeby energie" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project05/Baza02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Report spotřeby energie</figcaption>
+</figure>
+<figure>
+<img alt="Historické trendy" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project05/Baza04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Historické trendy</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-industry-power-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-industry-power-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti projektu" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Průmyslový energetický monitoring</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-industry-power-dialog-title">Monitoring napájení průmyslového podniku</h2>
+<section aria-labelledby="project-industry-power-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-industry-power-parameters">Parametry projektu</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Počet měřicích bodů</dt>
+<dd class="mt-1 font-semibold text-slate-100">6 (přívod + 5 rozvaděčů)</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Analyzátory elektrické sítě</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://emea.socomec.com/en/p/diris-a-20" rel="noopener noreferrer" target="_blank">Socomec DIRIS A20</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Síťová zařízení</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://mikrotik.com/product/knot" rel="noopener noreferrer" target="_blank">MikroTik KNOT</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Software a nástroje</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://ubuntu.com/server" rel="noopener noreferrer" target="_blank">Ubuntu Linux</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.zabbix.com/" rel="noopener noreferrer" target="_blank">Zabbix</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://grafana.com/" rel="noopener noreferrer" target="_blank">Grafana</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://docs.timescale.com/self-hosted/latest/" rel="noopener noreferrer" target="_blank">TimescaleDB</a>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-industry-power-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-industry-power-description">Konfigurace systému</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Systém monitoruje napájení středně velkého výrobního závodu. Zahrnuje měřicí bod nízkonapěťového přívodu a pět rozváděčů (PDP) rozmístěných v areálu.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Každý měřicí bod používá Socomec DIRIS A20 s komunikačním modulem RS485 (Modbus RTU). Analyzátory propojuje brána MikroTik KNOT přes Modbus RTU/TCP.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Skripty Python odesílají hodnoty parametrů do Zabbixu a ukládají je do databáze na samostatném virtuálním stroji.</p>
+</section>
+<section aria-labelledby="project-industry-power-measurements" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-industry-power-measurements">Parametry sbírané v každém měřicím bodě</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-2 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Fázová napětí.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Sdružená napětí.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Fázové proudy.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Činný a jalový výkon po fázích.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Průměrné napětí a proud.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Celkový činný, jalový a zdánlivý výkon.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Celkové harmonické zkreslení (THD) napětí a proudu.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Účiník, celkový i po fázích.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Počítadla importované a exportované činné, jalové a zdánlivé energie.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Kvalita spojení.</span></li>
+</ul>
+</section>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Při překročení nastavených limitů může Zabbix odesílat upozornění e-mailem, SMS nebo přes messenger.</p>
+<section aria-labelledby="project-industry-power-dashboards" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-industry-power-dashboards">Dashboardy Grafana</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-2 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Výkon jednotlivých měřicích bodů a celkový výkon.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Aktuální hodnoty všech měřicích bodů.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Trendy a historická data.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Report spotřeby energie pro každý měřicí bod.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Report spotřeby energie" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project06/VD_Energy_00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Report spotřeby energie</figcaption>
+</figure>
+<figure>
+<img alt="Historické trendy" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project06/VD_Energy_03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Historické trendy</figcaption>
+</figure>
+<figure>
+<img alt="Přehled měřicího bodu" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project06/VD_Energy_04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Přehled měřicího bodu</figcaption>
+</figure>
+<figure>
+<img alt="Přehled monitoringu napájení továrny" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project06/VD_Energy_05.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Přehled monitoringu napájení továrny</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-heating-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-heating-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti projektu" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Průmyslové vytápění · SCADA</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-heating-dialog-title">SCADA systém vytápění v tiskárně</h2>
+<section aria-labelledby="project-heating-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-heating-parameters">Parametry projektu</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Verze Zenon SCADA</dt>
+<dd class="mt-1 font-semibold text-slate-100">6.51</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Počet proměnných</dt>
+<dd class="mt-1 font-semibold text-slate-100">128</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Komunikační protokoly</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.modbus.org/modbus-specifications" rel="noopener noreferrer" target="_blank">Modbus TCP</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.codesys.com/products/engineering/development-system/" rel="noopener noreferrer" target="_blank">CODESYS</a>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-heating-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-heating-description">Popis projektu</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Systém SCADA nastavuje a řídí vytápění tiskárny se dvěma kancelářskými a dvěma výrobními budovami. Každá místnost má vlastní okruh s čerpadlem a teplotním snímačem, který řídí samostatný regulátor.</p>
+</section>
+<section aria-labelledby="project-heating-features" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-heating-features">Implementované funkce</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Přehledová obrazovka s teplotami v místnostech a provozními režimy topných okruhů.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Nastavení okruhů: denní hodinový plán, víkendový režim a ruční ovládání.</span></li>
+<li class="flex gap-3 sm:col-span-2"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Grafy teplot v místnostech a provozu čerpadel topných okruhů.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Přehled systému vytápění" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project07/Elgraph.01.png.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Přehled systému vytápění</figcaption>
+</figure>
+<figure>
+<img alt="Nastavení topných okruhů" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project07/Elgraph.00.png.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Nastavení topných okruhů</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-pharma-climate-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-pharma-climate-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti projektu" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Farmacie · Klimatizace</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-pharma-climate-dialog-title">SCADA systém klimatizace ve farmaceutickém závodě</h2>
+<section aria-labelledby="project-pharma-climate-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-pharma-climate-parameters">Parametry projektu</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Verze Zenon SCADA</dt>
+<dd class="mt-1 font-semibold text-slate-100">6.51</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Počet proměnných</dt>
+<dd class="mt-1 font-semibold text-slate-100">256</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Komunikační protokol</dt>
+<dd class="mt-2 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.modbus.org/modbus-specifications" rel="noopener noreferrer" target="_blank">Modbus TCP/RTU</a></dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-pharma-climate-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-pharma-climate-description">Popis projektu</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Čistota a vnitřní klima jsou při výrobě a skladování léčiv zásadní. V místnostech se sleduje teplota a vlhkost; v čistých prostorech se navíc měří přetlak vzduchu, který brání pronikání prachu.</p>
+</section>
+<section aria-labelledby="project-pharma-climate-features" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-pharma-climate-features">Implementované funkce</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Plány místností se zobrazenými naměřenými hodnotami.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Archivace dat a trendové grafy.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Záznam alarmů.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Zprávy o odchylkách měřených hodnot.</span></li>
+<li class="flex gap-3 sm:col-span-2"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>SMS upozornění na alarmové stavy.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Přehled monitoringu klimatu" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project08/PF01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Přehled monitoringu klimatu</figcaption>
+</figure>
+<figure>
+<img alt="Podmínky v čistém prostoru" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project08/PF02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Podmínky v čistém prostoru</figcaption>
+</figure>
+<figure>
+<img alt="Historický trend" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project08/PF03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Historický trend</figcaption>
+</figure>
+<figure>
+<img alt="AML (seznam alarmových zpráv)" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project08/PF04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">AML (seznam alarmových zpráv)</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-office-center-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-office-center-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti projektu" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Energetický monitoring · Komerční budova</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-office-center-dialog-title">Monitoring napájení administrativního centra</h2>
+<section aria-labelledby="project-office-center-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-office-center-parameters">Parametry projektu</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Počet elektrických přívodů</dt>
+<dd class="mt-1 font-semibold text-slate-100">4</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Analyzátory sítě</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://emea.socomec.com/en/p/diris-a-20" rel="noopener noreferrer" target="_blank">Socomec DIRIS A20</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Software</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold text-slate-100">
+<span>Windows</span>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.mysql.com/" rel="noopener noreferrer" target="_blank">MySQL</a>
+<span>PHP</span>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-office-center-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-office-center-description">Popis projektu</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Systém monitoruje napájení kancelářského centra se čtyřmi elektrickými přívody. Ukládá hlavní elektrické parametry: fázová a sdružená napětí, proudy, činný, jalový a zdánlivý výkon, účiník a údaje elektroměrů.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Zaznamenává se také stav všech čtyř automatických přepínačů zdrojů (ATS), včetně polohy přepínače a signálu spuštění generátoru.</p>
+</section>
+<section aria-labelledby="project-office-center-interface" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-office-center-interface">Rozhraní umožňuje</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Tabulku aktuálních hodnot anzeigen.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Historické grafy a data v reálném čase.</span></li>
+<li class="flex gap-3 sm:col-span-2"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Dashboard s vybranými parametry.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Historický trend elektrických parametrů" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project11/GL_00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Historický trend elektrických parametrů</figcaption>
+</figure>
+<figure>
+<img alt="Dashboard monitoringu napájení" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project11/GL_01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Dashboard monitoringu napájení</figcaption>
+</figure>
+<figure>
+<img alt="Aktuální naměřené hodnoty" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project11/GL_02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Aktuální naměřené hodnoty</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-stamping-press-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-stamping-press-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti projektu" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Monitoring výroby</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-stamping-press-dialog-title">Monitoring výroby na lisovacím lisu</h2>
+<section aria-labelledby="project-stamping-press-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-stamping-press-parameters">Parametry projektu</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">PLC</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.yaskawa.eu.com/controls/plc-control-systems/seriesdetail/serie/slio_1447" rel="noopener noreferrer" target="_blank">VIPA SLIO</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Software a nástroje</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold text-slate-100">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://ubuntu.com/server" rel="noopener noreferrer" target="_blank">Ubuntu Linux</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.mysql.com/" rel="noopener noreferrer" target="_blank">MySQL</a>
+<span>PHP</span>
+<span>Python</span>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-stamping-press-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-stamping-press-description">Popis projektu</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Systém eviduje počet dílů vyrobených lisem. Typ dílu se určuje automaticky v programu PLC podle nasazeného nástroje. Kumulované hodnoty čítačů se pravidelně načítají z PLC a ukládají do databáze.</p>
+</section>
+<section aria-labelledby="project-stamping-press-reports" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-stamping-press-reports">Z nasbíraných dat se vytvářejí reporty:</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Výroba — počet vyrobených dílů za zvolené období.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Množství spotřebovaného materiálu.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Počet dílů ve zvoleném období podle typu.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Doba prostojů.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Přehled monitoringu výroby" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project10/AKO_00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Přehled monitoringu výroby</figcaption>
+</figure>
+<figure>
+<img alt="Výrobní report 2" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project10/AKO_01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Výrobní report 2</figcaption>
+</figure>
+<figure>
+<img alt="Výrobní report 3" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project10/AKO_02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Výrobní report 3</figcaption>
+</figure>
+<figure>
+<img alt="Výrobní report 4" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project10/AKO_03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Výrobní report 4</figcaption>
+</figure>
+<figure>
+<img alt="Výrobní report 5" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project10/AKO_04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Výrobní report 5</figcaption>
+</figure>
+<figure>
+<img alt="Výrobní report 6" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project10/AKO_05.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Výrobní report 6</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-furnace-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-furnace-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Zavřít podrobnosti projektu" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Monitoring průmyslových procesů</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-furnace-dialog-title">Monitoring kalicí pece</h2>
+<section aria-labelledby="project-furnace-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-furnace-parameters">Parametry projektu</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Počet měřicích bodů</dt>
+<dd class="mt-1 font-semibold text-slate-100">6</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Komunikační protokol</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.modbus.org/introduction-to-modbus" rel="noopener noreferrer" target="_blank">Modbus</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Software</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold text-slate-100">
+<span>Windows</span>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.mysql.com/" rel="noopener noreferrer" target="_blank">MySQL</a>
+<span>PHP</span>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://grafana.com/" rel="noopener noreferrer" target="_blank">Grafana</a>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-furnace-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-furnace-description">Popis projektu</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Systém sleduje teplotní režimy kalicí pece. Aktuální a požadované teploty ze šesti měřicích bodů se načítají přes Modbus a ukládají do databáze.</p>
+</section>
+<section aria-labelledby="project-furnace-interface" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-furnace-interface">Rozhraní umožňuje:</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Zobrazit aktuální hodnoty s upozorněním na překročení povolených mezí.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Zobrazit aktuální i historické grafy.</span></li>
+<li class="flex gap-3 sm:col-span-2"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Měnit nastavení.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Nastavení měření pece" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project09/KRT_00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Nastavení měření pece</figcaption>
+</figure>
+<figure>
+<img alt="Historický teplotní trend" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project09/KRT_01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Historický teplotní trend</figcaption>
+</figure>
+<figure>
+<img alt="Obrazovka monitoringu pece" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project09/KRT_02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Obrazovka monitoringu pece</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-label="Image preview" id="image-preview-dialog">
+<button aria-label="Zavřít náhled obrázku" class="absolute top-3 right-3 z-10 grid size-11 place-items-center rounded-full bg-slate-900/70 text-white transition-colors hover:bg-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" id="image-preview-close" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+<button aria-label="Předchozí obrázek" class="absolute z-10 grid size-11 place-items-center rounded-full bg-slate-900/70 text-white transition-colors hover:bg-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" id="image-preview-prev" style="top:50%;left:0.5rem;transform:translateY(-50%)" type="button">
+<svg aria-hidden="true" class="size-6" fill="none" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<img alt="" id="image-preview-content"/>
+<button aria-label="Následující obrázek" class="absolute z-10 grid size-11 place-items-center rounded-full bg-slate-900/70 text-white transition-colors hover:bg-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" id="image-preview-next" style="top:50%;right:0.5rem;transform:translateY(-50%)" type="button">
+<svg aria-hidden="true" class="size-6" fill="none" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</dialog>
+<section aria-labelledby="contact-callout" class="bg-[#4B5563] p-6 sm:p-8 lg:p-10" id="contacts">
+<div class="mx-auto grid w-full max-w-6xl gap-10 overflow-hidden rounded-3xl bg-[#374151] p-8 text-white shadow-xl sm:p-12 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-16 lg:p-16">
+<div class="max-w-2xl">
+<p class="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#9FD34C] sm:text-sm">Pojďme spolupracovat</p>
+<h2 class="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl" id="contact-callout">
+            Chcete zahájit projekt?
+          </h2>
+<p class="mt-5 max-w-xl text-base leading-relaxed text-slate-200 sm:text-lg">Řekněte nám více o svém provozu — navrhneme optimální řešení.</p>
+</div>
+<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+<a class="group flex min-w-0 items-center gap-4 rounded-xl border border-white/15 bg-white/5 px-5 py-4 transition-colors hover:border-[#9FD34C]/60 hover:bg-white/10" href="mailto:info@scada.lviv.ua">
+<span aria-hidden="true" class="grid size-11 shrink-0 place-items-center rounded-lg bg-[#9FD34C] text-slate-900">
+<svg class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="M3 6.75A1.75 1.75 0 0 1 4.75 5h14.5A1.75 1.75 0 0 1 21 6.75v10.5A1.75 1.75 0 0 1 19.25 19H4.75A1.75 1.75 0 0 1 3 17.25V6.75Z" stroke="currentColor" stroke-width="1.7"></path>
+<path d="m4 7 8 6 8-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
+</svg>
+</span>
+<span class="min-w-0">
+<span class="block text-xs font-medium text-slate-300">Napište nám</span>
+<span class="mt-1 block break-all text-sm font-semibold text-white sm:text-base">info@scada.lviv.ua</span>
+</span>
+</a>
+<div class="min-w-0 rounded-xl border border-white/15 bg-white/5 px-5 py-4">
+<a class="group flex items-center gap-4" href="tel:+380931330787">
+<span aria-hidden="true" class="grid size-11 shrink-0 place-items-center rounded-lg bg-[#9FD34C] text-slate-900">
+<svg class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="M7.2 3.75h2.1c.48 0 .9.33 1.02.8l.8 3.04a1.05 1.05 0 0 1-.38 1.1l-1.42 1.1a14.5 14.5 0 0 0 4.9 4.9l1.1-1.42a1.05 1.05 0 0 1 1.1-.38l3.04.8c.47.12.8.54.8 1.02v2.1A2.19 2.19 0 0 1 18.07 19C10.3 18.56 5.44 13.7 5 5.93a2.19 2.19 0 0 1 2.2-2.18Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
+</svg>
+</span>
+<span class="min-w-0">
+<span class="block text-xs font-medium text-slate-300">Zavolejte nám</span>
+<span class="mt-1 block text-sm font-semibold text-white sm:text-base">+380 93 133 0787</span>
+</span>
+</a>
+<div aria-label="Message us" class="mt-4 flex flex-wrap gap-2">
+<a class="rounded-full border border-white/20 px-3 py-1.5 text-xs font-semibold text-slate-100 transition-colors hover:border-[#9FD34C] hover:text-[#9FD34C]" href="https://wa.me/380931330787" rel="noopener noreferrer" target="_blank">WhatsApp</a>
+<a class="rounded-full border border-white/20 px-3 py-1.5 text-xs font-semibold text-slate-100 transition-colors hover:border-[#9FD34C] hover:text-[#9FD34C]" href="viber://chat?number=%2B380931330787">Viber</a>
+<a class="rounded-full border border-white/20 px-3 py-1.5 text-xs font-semibold text-slate-100 transition-colors hover:border-[#9FD34C] hover:text-[#9FD34C]" href="tg://resolve?phone=380931330787">Telegram</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer aria-label="Footer" class="bg-[#1F2937] px-6 pt-[60px] pb-10 text-slate-300 sm:px-8">
+<button aria-label="Повернутися нагору" class="ml-auto mr-0 -mt-[84px] mb-9 grid size-12 place-items-center rounded-full bg-[#9FD34C] text-[#1F2937] shadow-lg transition-colors hover:bg-[#addf61] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9FD34C]" id="back-to-top" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="M12 19V5m0 0-6 6m6-6 6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="mx-auto flex max-w-7xl flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+<div class="flex items-center gap-4">
+<a aria-label="OSS — home" class="shrink-0" href="#home">
+<img alt="" height="32" src="../assets/images/osslogo.svg" width="46"/>
+</a>
+<p class="max-w-sm text-sm leading-relaxed">
+            © 2026 OSS. All rights reserved.<br/>Lvov, Ukrajina
+          </p>
+</div>
+<div aria-label="Contact information" class="flex flex-col gap-6 sm:ml-auto sm:w-full sm:max-w-2xl sm:flex-row sm:justify-end sm:gap-10">
+<a class="flex min-w-0 items-center gap-3 transition-colors hover:text-white" href="mailto:info@scada.lviv.ua">
+<span aria-hidden="true" class="grid size-10 shrink-0 place-items-center text-slate-400">
+<svg class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="M3 6.75A1.75 1.75 0 0 1 4.75 5h14.5A1.75 1.75 0 0 1 21 6.75v10.5A1.75 1.75 0 0 1 19.25 19H4.75A1.75 1.75 0 0 1 3 17.25V6.75Z" stroke="currentColor" stroke-width="1.7"></path>
+<path d="m4 7 8 6 8-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
+</svg>
+</span>
+<span class="min-w-0">
+<span class="block text-xs font-medium text-slate-400">Napište nám</span>
+<span class="mt-1 block break-all text-sm font-semibold text-white">info@scada.lviv.ua</span>
+</span>
+</a>
+<div class="min-w-0">
+<a class="flex items-center gap-3" href="tel:+380931330787">
+<span aria-hidden="true" class="grid size-10 shrink-0 place-items-center text-slate-400">
+<svg class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="M7.2 3.75h2.1c.48 0 .9.33 1.02.8l.8 3.04a1.05 1.05 0 0 1-.38 1.1l-1.42 1.1a14.5 14.5 0 0 0 4.9 4.9l1.1-1.42a1.05 1.05 0 0 1 1.1-.38l3.04.8c.47.12.8.54.8 1.02v2.1A2.19 2.19 0 0 1 18.07 19C10.3 18.56 5.44 13.7 5 5.93a2.19 2.19 0 0 1 2.2-2.18Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
+</svg>
+</span>
+<span>
+<span class="block text-xs font-medium text-slate-400">Zavolejte nám</span>
+<span class="mt-1 block text-sm font-semibold text-white">+380 93 133 0787</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+      const menu = document.querySelector(".site-nav");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const menuLinks = document.querySelector(".site-menu");
+      const backToTop = document.querySelector("#back-to-top");
+
+      function setMenuOpen(isOpen) {
+        menu.classList.toggle("is-open", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Закрити меню" : "Відкрити меню");
+      }
+
+      function updateMenuBackground() {
+        menu.classList.toggle("is-scrolled", window.scrollY > 0);
+      }
+
+      menuToggle.addEventListener("click", () => {
+        setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+      });
+      menuLinks.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+          setMenuOpen(false);
+        }
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          setMenuOpen(false);
+        }
+      });
+      window.matchMedia("(min-width: 900px)").addEventListener("change", () => setMenuOpen(false));
+      window.addEventListener("scroll", updateMenuBackground, { passive: true });
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+        });
+      });
+      document.querySelectorAll("[data-dialog-target]").forEach((openButton) => {
+        const dialog = document.getElementById(openButton.dataset.dialogTarget);
+        const closeButton = dialog.querySelector(".service-dialog-close");
+
+        openButton.addEventListener("click", () => dialog.showModal());
+        closeButton.addEventListener("click", () => dialog.close());
+        dialog.addEventListener("click", (event) => {
+          const bounds = dialog.getBoundingClientRect();
+          const clickedOutside =
+            event.clientX < bounds.left ||
+            event.clientX > bounds.right ||
+            event.clientY < bounds.top ||
+            event.clientY > bounds.bottom;
+
+          if (event.target === dialog && clickedOutside) {
+            dialog.close();
+          }
+        });
+        dialog.addEventListener("cancel", (event) => {
+          event.preventDefault();
+          dialog.close();
+        });
+        dialog.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            event.preventDefault();
+            dialog.close();
+          }
+        });
+        dialog.addEventListener("close", () => openButton.focus());
+      });
+      const imagePreviewDialog = document.querySelector("#image-preview-dialog");
+      const imagePreviewContent = document.querySelector("#image-preview-content");
+      const imagePreviewClose = document.querySelector("#image-preview-close");
+      const imagePreviewPrev = document.querySelector("#image-preview-prev");
+      const imagePreviewNext = document.querySelector("#image-preview-next");
+      let previewTrigger;
+      let previewGallery = [];
+
+      function showPreviewImage(image) {
+        previewTrigger = image;
+        imagePreviewContent.src = image.src;
+        imagePreviewContent.alt = image.alt;
+      }
+
+      function movePreviewImage(direction) {
+        if (previewGallery.length < 2) return;
+        const currentIndex = previewGallery.indexOf(previewTrigger);
+        const nextIndex = (currentIndex + direction + previewGallery.length) % previewGallery.length;
+        showPreviewImage(previewGallery[nextIndex]);
+      }
+
+      function openImagePreview(image) {
+        const gallery = image.closest("figure")?.parentElement;
+        previewGallery = gallery
+          ? Array.from(gallery.querySelectorAll("img[data-image-preview]"))
+          : [image];
+        showPreviewImage(image);
+        const showNavigation = previewGallery.length > 1;
+        imagePreviewPrev.hidden = !showNavigation;
+        imagePreviewNext.hidden = !showNavigation;
+        imagePreviewDialog.showModal();
+        imagePreviewClose.focus();
+      }
+
+      document.querySelectorAll("dialog.service-dialog img[data-image-preview]").forEach((image) => {
+        image.tabIndex = 0;
+        image.setAttribute("role", "button");
+        image.setAttribute("aria-label", `Zobrazit větší obrázek: ${image.alt}`);
+        image.classList.add("image-preview-trigger");
+        image.addEventListener("click", () => openImagePreview(image));
+        image.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openImagePreview(image);
+          }
+        });
+      });
+
+      imagePreviewClose.addEventListener("click", () => imagePreviewDialog.close());
+      imagePreviewPrev.addEventListener("click", () => movePreviewImage(-1));
+      imagePreviewNext.addEventListener("click", () => movePreviewImage(1));
+      imagePreviewDialog.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          imagePreviewDialog.close();
+        } else if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          movePreviewImage(-1);
+        } else if (event.key === "ArrowRight") {
+          event.preventDefault();
+          movePreviewImage(1);
+        }
+      });
+      imagePreviewDialog.addEventListener("click", (event) => {
+        if (
+          !imagePreviewContent.contains(event.target) &&
+          !imagePreviewClose.contains(event.target) &&
+          !imagePreviewPrev.contains(event.target) &&
+          !imagePreviewNext.contains(event.target)
+        ) {
+          imagePreviewDialog.close();
+        }
+      });
+      imagePreviewDialog.addEventListener("close", () => {
+        imagePreviewContent.removeAttribute("src");
+        previewTrigger?.focus();
+        previewGallery = [];
+      });
+      updateMenuBackground();
+    </script>
+</body>
+</html>

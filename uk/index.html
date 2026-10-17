@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#0f172a" name="theme-color"/>
+<title>SCADA та моніторинг енергоспоживання | OSS Львів</title>
+<meta content="OSS проєктує та впроваджує SCADA, диспетчеризацію сонячних електростанцій і промисловий моніторинг енергоспоживання. Львів, Україна." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<link href="https://scada.lviv.ua/uk/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="uk_UA" property="og:locale"/>
+<meta content="Outsourcing SCADA Solutions" property="og:site_name"/>
+<meta content="SCADA та моніторинг енергоспоживання | OSS Львів" property="og:title"/>
+<meta content="OSS проєктує та впроваджує SCADA, диспетчеризацію сонячних електростанцій і промисловий моніторинг енергоспоживання. Львів, Україна." property="og:description"/>
+<meta content="https://scada.lviv.ua/uk/" property="og:url"/>
+<meta content="https://scada.lviv.ua/assets/images/Project01/Solar08.jpg.webp" property="og:image"/>
+<meta content="Сонячна електростанція під моніторингом SCADA від OSS" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="SCADA та моніторинг енергоспоживання | OSS Львів" name="twitter:title"/>
+<meta content="OSS проєктує та впроваджує SCADA, диспетчеризацію сонячних електростанцій і промисловий моніторинг енергоспоживання. Львів, Україна." name="twitter:description"/>
+<meta content="https://scada.lviv.ua/assets/images/Project01/Solar08.jpg.webp" name="twitter:image"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Outsourcing SCADA Solutions",
+  "alternateName": "OSS",
+  "url": "https://scada.lviv.ua/",
+  "logo": "https://scada.lviv.ua/assets/images/osslogo.svg",
+  "description": "OSS проєктує та впроваджує SCADA, диспетчеризацію сонячних електростанцій і промисловий моніторинг енергоспоживання. Львів, Україна.",
+  "email": "info@scada.lviv.ua",
+  "telephone": "+380931330787",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Львів",
+    "addressCountry": "UA"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HJZBJC6Z9M"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HJZBJC6Z9M');
+    </script>
+<link href="../assets/images/favicon.png" rel="icon" type="image/png"/>
+<link href="../assets/css/tailwind.css" rel="stylesheet"/>
+<link href="https://scada.lviv.ua/uk/" hreflang="en" rel="alternate"/><link href="https://scada.lviv.ua/uk/" hreflang="uk" rel="alternate"/><link href="https://scada.lviv.ua/cs/" hreflang="cs" rel="alternate"/><link href="https://scada.lviv.ua/de/" hreflang="de" rel="alternate"/><link href="https://scada.lviv.ua/uk/" hreflang="x-default" rel="alternate"/></head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased">
+<nav aria-label="Головне меню" class="site-nav fixed inset-x-0 top-0 z-50 text-white">
+<div class="site-nav-inner mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
+<a aria-label="Головна" class="shrink-0" href="https://scada.lviv.ua/uk/">
+<img alt="OSS logo" class="site-nav-logo w-auto" height="40" src="../assets/images/osslogo.svg" width="58"/>
+</a>
+<button aria-controls="site-menu" aria-expanded="false" aria-label="Відкрити меню" class="menu-toggle" type="button">
+<svg aria-hidden="true" class="menu-toggle-icon" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+<ul class="site-menu flex items-center gap-3 text-[0.8125rem] font-medium tracking-wide sm:gap-6 sm:text-[1.09375rem]" id="site-menu">
+<li>
+<a class="menu-link transition-opacity hover:opacity-75" href="#home">
+<svg aria-hidden="true" class="home-icon" viewbox="0 0 640 640">
+<path d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM304 384L336 384C362.5 384 384 405.5 384 432L384 528L256 528L256 432C256 405.5 277.5 384 304 384z" fill="currentColor"></path>
+</svg>
+<span class="home-label">ГОЛОВНА</span>
+</a>
+</li>
+<li><a class="menu-link whitespace-nowrap transition-opacity hover:opacity-75" href="#pv-stations">СЕС</a></li>
+<li><a class="menu-link whitespace-nowrap transition-opacity hover:opacity-75" href="#monitoring">МОНІТОРИНГ</a></li>
+<li><a class="menu-link whitespace-nowrap transition-opacity hover:opacity-75" href="#projects">ПРОЄКТИ</a></li>
+<li><a class="menu-link whitespace-nowrap transition-opacity hover:opacity-75" href="#contacts">КОНТАКТИ</a></li>
+<li class="language-options ml-1 sm:ml-2">
+<ul class="language-options-list">
+
+<li>
+<a aria-label="Česká verze webu" class="menu-link" href="/cs/" title="Čeština">
+<svg aria-hidden="true" class="h-4 w-6 rounded-sm" role="img" viewbox="0 0 24 16">
+<rect fill="#FFFFFF" height="8" width="24"></rect>
+<rect fill="#D7141A" height="8" width="24" y="8"></rect>
+<path d="M0 0v16l12-8z" fill="#11457E"></path>
+</svg>
+</a>
+</li>
+<li>
+<a aria-label="Deutsche Website" class="menu-link" href="/de/" title="Deutsch">
+<svg aria-hidden="true" class="h-4 w-6 rounded-sm" role="img" viewbox="0 0 24 16">
+<rect fill="#FFCE00" height="16" width="24"></rect>
+<rect fill="#DD0000" height="10.67" width="24"></rect>
+<rect fill="#000000" height="5.33" width="24"></rect>
+</svg>
+</a>
+</li>
+<li><a aria-label="Англійська версія сайту" class="menu-link" href="/" title="English">
+<svg aria-hidden="true" class="h-4 w-6 rounded-sm" role="img" viewbox="0 0 24 16">
+<rect fill="#012169" height="16" width="24"></rect>
+<path d="M0 0L24 16M24 0L0 16" stroke="#fff" stroke-width="4"></path>
+<path d="M0 0L24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.5"></path>
+<path d="M12 0V16M0 8H24" stroke="#fff" stroke-width="6"></path>
+<path d="M12 0V16M0 8H24" stroke="#C8102E" stroke-width="3"></path>
+</svg>
+</a></li></ul>
+</li>
+</ul>
+</div>
+</nav>
+<header class="page-banner flex h-dvh items-center justify-center px-6 pb-8 pt-20" id="home">
+</header>
+<section aria-labelledby="core-message" class="bg-[#374151] px-6 py-20 text-white sm:py-28">
+<div class="mx-auto max-w-6xl translate-x-5 border-l-4 border-[#9FD34C] pl-6 sm:translate-x-[38px] sm:pl-10">
+<p class="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[#9FD34C] sm:text-sm">
+          SCADA <span aria-hidden="true" class="px-2 text-slate-500">/</span> Моніторинг <span aria-hidden="true" class="px-2 text-slate-500">/</span> ЗВІТНІСТЬ
+        </p>
+<h1 class="max-w-5xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl" id="core-message">
+          Системи збору даних, моніторингу та керування
+          <span class="mt-2 block text-[#9FD34C]">для сонячних електростанцій, накопичувачів енергії та промислових підприємств.</span>
+</h1>
+</div>
+</section>
+<section aria-labelledby="pv-stations-title" class="bg-slate-50 px-6 py-20 sm:py-24" id="pv-stations">
+<div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+<div>
+<p class="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Сонячна енергетика</p>
+<h2 class="text-3xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="pv-stations-title">
+            SCADA для сонячних електростанцій
+          </h2>
+<p class="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">Відстежуйте продуктивність станції, генерацію та стани інверторів в єдиному інтерфейсі.</p>
+<ul class="mt-6 space-y-3 text-base leading-none text-slate-700 sm:text-lg">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Збір даних у реальному часі та огляд станції</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Керування активною потужністю всієї станції</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Режими роботи інверторів</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Графіки роботи станції, тренди генерації та звітність</span></li>
+</ul>
+<button class="mt-8 inline-flex items-center rounded-lg border border-[#658b2e] px-5 py-3 text-sm font-semibold text-[#4f7024] transition-colors hover:bg-[#658b2e] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="pv-scada-dialog" type="button">
+            Детальніше
+          </button>
+</div>
+<img alt="SCADA dashboard for monitoring a solar power plant" class="w-full" height="850" loading="lazy" src="../assets/images/scada1-1.png.webp" width="1400"/>
+</div>
+</section>
+<section aria-labelledby="industrial-monitoring-title" class="bg-slate-200 px-6 py-20 sm:py-24" id="monitoring">
+<div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+<img alt="Industrial monitoring dashboard with energy trends and reports" class="order-2 w-full lg:order-1" height="900" loading="lazy" src="../assets/images/grafana3-screenshot.png.webp" width="1400"/>
+<div class="order-1 lg:order-2">
+<p class="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Промислові підприємства</p>
+<h2 class="text-3xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="industrial-monitoring-title">
+            Промисловий моніторинг і звітність
+          </h2>
+<p class="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">Об’єднуємо дані обладнання та технологічних процесів, щоб команди бачили перебіг роботи, виявляли зміни й ухвалювали обґрунтовані рішення.</p>
+<ul class="mt-6 space-y-3 text-base leading-none text-slate-700 sm:text-lg">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Централізований збір даних з промислового обладнання</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Поточні дашборди, історичні тренди та журнали подій</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Зрозумілі звіти для аналізу роботи</span></li>
+</ul>
+<button class="mt-8 inline-flex items-center rounded-lg border border-[#658b2e] px-5 py-3 text-sm font-semibold text-[#4f7024] transition-colors hover:bg-[#658b2e] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="industrial-monitoring-dialog" type="button">
+            Детальніше
+          </button>
+</div>
+</div>
+</section>
+<section aria-labelledby="projects-title" class="bg-slate-50 px-6 py-20 sm:py-24" id="projects">
+<div class="mx-auto max-w-6xl">
+<p class="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Реалізовані проєкти</p>
+<h2 class="max-w-3xl text-3xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="projects-title">
+          Вибрані проєкти SCADA та моніторингу
+        </h2>
+<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="project-grid">
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Дашборд станції та керування" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project01/Solar02.jpg.webp"/>
+<div class="p-6 sm:p-8">
+<div class="flex items-center justify-between gap-3">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500" data-project-number="">Проєкт 01</p>
+<span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Сонячна енергетика</span>
+</div>
+<h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl">
+<button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-pv-dialog" type="button">
+                  Локальна SCADA для сонячної електростанції потужністю 6 МВт
+                </button>
+</h3>
+</div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Огляд поточних електричних параметрів інвертора" class="project-card-image aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project02/Huawei.00.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Проєкт 02</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Сонячна енергетика</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-huawei-dialog" type="button">SmartObject інвертора Huawei SUN2000 для Zenon SCADA</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Централізований огляд сонячних електростанцій" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project03/CE.00.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Проєкт 03</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Сонячна енергетика</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-dispatch-dialog" type="button">SCADA для диспетчеризації групи сонячних електростанцій</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Дашборд використання обладнання" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project04/Vodalend_OEE_00.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Проєкт 04</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Промисловість</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-oee-dialog" type="button">Використання обладнання (OEE)</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Огляд електричних вимірювань" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project05/Baza00.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Проєкт 05</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Енергомоніторинг</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-power-monitoring-dialog" type="button">Моніторинг електропостачання виробничого майданчика з кількома джерелами та споживачами</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Звіт про споживання електроенергії" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project06/VD_Energy_00.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Проєкт 06</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Енергомоніторинг</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-industry-power-dialog" type="button">Моніторинг електропостачання підприємства</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Огляд системи опалення" class="project-card-image aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project07/Elgraph.01.png.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Проєкт 07</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Промисловість</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-heating-dialog" type="button">SCADA-система опалення поліграфічного підприємства</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Огляд моніторингу клімату" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project08/PF01.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Проєкт 08</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Фармацевтика</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-pharma-climate-dialog" type="button">SCADA-система клімат-контролю фармацевтичного підприємства</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Дашборд моніторингу електропостачання" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project11/GL_01.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Проєкт 09</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Енергомоніторинг</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#658b2e]" data-dialog-target="project-office-center-dialog" type="button">Моніторинг електропостачання офісного центру</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Огляд виробничого моніторингу" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project10/AKO_00.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Проєкт 10</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Промисловість</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" data-dialog-target="project-stamping-press-dialog" type="button">Моніторинг роботи штампувального преса</button></h3></div>
+</article>
+<article class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+<img alt="Історичний графік температури" class="aspect-video w-full object-cover" loading="lazy" src="../assets/images/Project09/KRT_01.jpg.webp"/>
+<div class="p-6 sm:p-8"><div class="flex items-center justify-between gap-3"><p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Проєкт 11</p><span class="inline-flex shrink-0 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-600">Промисловість</span></div><h3 class="mt-3 text-xl font-bold text-[#374151] sm:text-2xl"><button class="text-left transition-colors hover:text-[#4f7024] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" data-dialog-target="project-furnace-dialog" type="button">Моніторинг гартувальної печі</button></h3></div>
+</article>
+</div>
+</div>
+</section>
+<dialog aria-labelledby="pv-scada-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="pv-scada-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити вікно" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<header>
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Сонячна енергетика</p>
+<h2 class="max-w-3xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="pv-scada-dialog-title">SCADA для сонячних електростанцій</h2>
+<p class="mt-5 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Зі збільшенням кількості та потужності сонячних електростанцій керування інверторами й допоміжним обладнанням через окремі інструменти виробників стає дедалі складнішим. Віддалені платформи моніторингу також можуть залежати від підключення до інтернету.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Для середніх і великих станцій локальна SCADA об’єднує моніторинг і керування всією станцією в одній системі. За належних експлуатаційних умов інвестиція може окупитися протягом перших тижнів або місяців роботи.</p>
+</header>
+<section aria-labelledby="zenon-platform-title" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+<div>
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-[#9FD34C]">Наша платформа</p>
+<h3 class="mt-2 text-xl font-bold sm:text-2xl" id="zenon-platform-title">COPA-DATA zenon</h3>
+<p class="mt-2 max-w-2xl text-sm leading-relaxed text-slate-200 sm:text-base">Ми використовуємо zenon як основну платформу для створення відкритих енергетичних застосунків на базі стандартів.</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<img alt="COPA-DATA logo" class="h-14 w-52 rounded-lg bg-white px-3 py-2 object-contain" height="160" loading="lazy" src="../assets/images/copa-data-vector-logo2.svg" width="652"/>
+<a class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-lg border border-white/30 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-[#9FD34C] hover:text-[#9FD34C] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9FD34C]" href="https://www.copadata.com/" rel="noopener noreferrer" target="_blank">
+                Відвідати COPA-DATA
+                <span aria-hidden="true" class="ml-2">↗</span>
+</a>
+</div>
+</div>
+<div class="mt-6 border-t border-white/15 pt-5">
+<h4 class="text-xs font-bold uppercase tracking-[0.18em] text-slate-300">Ключові галузі</h4>
+<ul class="mt-3 flex flex-wrap gap-2">
+<li class="rounded-full border border-white/20 px-3 py-1.5 text-sm">Харчова промисловість</li>
+<li class="rounded-full border border-white/20 px-3 py-1.5 text-sm">Енергетика та інфраструктура</li>
+<li class="rounded-full border border-white/20 px-3 py-1.5 text-sm">Фармацевтика</li>
+<li class="rounded-full border border-white/20 px-3 py-1.5 text-sm">Автомобільна промисловість</li>
+</ul>
+</div>
+<div aria-labelledby="energy-protocols-title" class="mt-6 border-t border-white/15 pt-5">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-[#9FD34C]">Відкриті стандарти</p>
+<h4 class="mt-2 text-lg font-bold sm:text-xl" id="energy-protocols-title">Інтеграція з енергетичними системами</h4>
+<p class="mt-3 max-w-3xl text-sm leading-relaxed text-slate-200 sm:text-base">zenon підтримує поширені енергетичні протоколи для інтеграції обладнання станції та зовнішніх систем.</p>
+<ul class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+<li class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">Modbus / SunSpec</li>
+<li class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">DNP3</li>
+<li class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">MQTT</li>
+<li class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">IEC 60870-5 (101/103/104)</li>
+<li class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">IEC 61850</li>
+<li class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100">GOOSE</li>
+</ul>
+</div>
+</section>
+<section aria-label="Plant integration and local SCADA benefits" class="mt-10 grid gap-8 lg:grid-cols-2">
+<div>
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-[#658b2e]">Досвід роботи з обладнанням різних виробників</p>
+<h3 class="mt-2 text-xl font-bold text-[#374151] sm:text-2xl">Єдина система для всієї станції</h3>
+<p class="mt-3 text-base leading-relaxed text-slate-600">Маємо досвід інтеграції станцій з інверторами Huawei та Fronius, обладнанням Schneider Electric, а також менш поширеними марками інверторів.</p>
+<ul aria-label="Supported inverter manufacturers" class="mt-5 flex flex-wrap items-end gap-x-5 gap-y-4">
+<li>
+<figure class="flex flex-col items-center gap-1">
+<img alt="Huawei" class="h-16 w-28 object-contain" height="240" loading="lazy" src="../assets/images/huawei.svg" width="240"/>
+<figcaption class="text-xs font-medium text-slate-600">Huawei</figcaption>
+</figure>
+</li>
+<li>
+<figure class="flex flex-col items-center gap-1">
+<img alt="Fronius" class="h-16 w-28 object-contain" height="240" loading="lazy" src="../assets/images/fronius.svg" width="240"/>
+<figcaption class="text-xs font-medium text-slate-600">Fronius</figcaption>
+</figure>
+</li>
+<li>
+<figure class="flex flex-col items-center gap-1">
+<img alt="Schneider Electric" class="h-16 w-28 object-contain" height="240" loading="lazy" src="../assets/images/se.svg" width="240"/>
+<figcaption class="text-xs font-medium text-slate-600">Schneider Electric</figcaption>
+</figure>
+</li>
+</ul>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-[#658b2e]">Переваги локальної SCADA</p>
+<h3 class="mt-2 text-xl font-bold text-[#374151] sm:text-2xl">Керуйте з повним розумінням ситуації</h3>
+<ul class="mt-4 space-y-2 text-base leading-relaxed text-slate-700">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Сценарії керування для станції та узгоджене керування інверторами різних виробників</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Єдиний інтерфейс для інверторів та іншого обладнання станції</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Моніторинг температури трансформаторів і підстанцій</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Швидкий доступ до діагностики та локального керування без інтернету</span></li>
+</ul>
+</div>
+</section>
+<section aria-labelledby="scada-features-title" class="mt-10">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-[#658b2e]">Можливості системи</p>
+<h3 class="mt-2 text-xl font-bold text-[#374151] sm:text-2xl" id="scada-features-title">Налаштуйте систему відповідно до свого підприємства</h3>
+<div class="mt-5 grid gap-5 lg:grid-cols-2">
+<div class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+<h4 class="text-lg font-bold text-[#374151]">Основні функції</h4>
+<ul class="mt-4 space-y-3 text-base leading-relaxed text-slate-700">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Головний дашборд станції з функціями керування</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Окремі екрани інверторів, вимикачів, стрінгових коробок і аналізаторів мережі з налаштуваннями</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Хронологічний список подій (CEL) і список аварійних повідомлень (AML)</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Історичні графіки та дані в реальному часі</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Налаштування застосунку</span></li>
+</ul>
+</div>
+<div class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+<h4 class="text-lg font-bold text-[#374151]">Додаткові функції</h4>
+<ul class="mt-4 space-y-3 text-base leading-relaxed text-slate-700">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Однолінійна схема (SLD) і стан IT-мережі</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Статистика, послідовності керування та звіти</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Віддалений доступ</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Хмарний хостинг SCADA</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section aria-labelledby="scada-integration-title" class="mt-10 rounded-2xl bg-[#e8efdc] p-5 sm:p-6">
+<h3 class="text-lg font-bold text-[#374151] sm:text-xl" id="scada-integration-title">Інтеграція за межами станції</h3>
+<p class="mt-2 text-base leading-relaxed text-slate-700">За потреби SCADA можна інтегрувати зі сторонніми платформами, зокрема передавати дані до зовнішніх баз або хмарних сервісів для візуалізації та аналізу.</p>
+</section>
+<section aria-label="Solar plant SCADA screenshots" class="mt-10">
+<div class="grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Огляд станції та керування" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/scada1-1.png.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Огляд станції та керування</figcaption>
+</figure>
+<figure>
+<img alt="Графіки станції та дані обладнання" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/scada1-2.png.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Графіки станції та дані обладнання</figcaption>
+</figure>
+</div>
+</section>
+</div>
+</dialog>
+<dialog aria-labelledby="industrial-monitoring-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="industrial-monitoring-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити вікно" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-0 sm:px-10 sm:pb-0">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Промислові підприємства</p>
+<h2 class="text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="industrial-monitoring-dialog-title">Промисловий моніторинг і звітність</h2>
+<p class="mt-5 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Збирання, архівування та візуалізація виробничих даних потрібні підприємствам будь-якого масштабу й галузі: від базового обліку електроспоживання, який частково забезпечують наявні системи AMR, до оцінювання ефективності виробництва (OEE). Офісним і торговельним центрам також потрібен регулярний контроль споживання ресурсів. Важливо стежити й за станом обладнання та комп’ютерних мереж, якими дані передаються на сервери. Для цих завдань ми використовуємо відкрите програмне забезпечення та сучасні підходи.</p>
+<section aria-label="Open software and platforms" class="mt-8">
+<div class="grid grid-cols-4 justify-items-center gap-x-4 gap-y-5 py-2">
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="Ubuntu — open official website in a new tab" href="https://ubuntu.com/" rel="noopener noreferrer" target="_blank">
+<img alt="Операційна система" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-ubuntu.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Операційна система</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="Docker — open official website in a new tab" href="https://www.docker.com/" rel="noopener noreferrer" target="_blank">
+<img alt="Платформа віртуалізації" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-docker.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Платформа віртуалізації</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="PostgreSQL — open official website in a new tab" href="https://www.postgresql.org/" rel="noopener noreferrer" target="_blank">
+<img alt="База даних" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-postgresql.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">База даних</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="Zabbix — open official website in a new tab" href="https://www.zabbix.com/" rel="noopener noreferrer" target="_blank">
+<img alt="Моніторинг IT-інфраструктури" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-zabbix.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Моніторинг IT-інфраструктури</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="Grafana — open official website in a new tab" href="https://grafana.com/" rel="noopener noreferrer" target="_blank">
+<img alt="Візуалізація даних" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-grafana.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Візуалізація даних</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="Power BI — open official website in a new tab" href="https://www.microsoft.com/en-us/power-platform/products/power-bi/" rel="noopener noreferrer" target="_blank">
+<img alt="Формування звітів" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-powerbi.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Формування звітів</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="Python — open official website in a new tab" href="https://www.python.org/" rel="noopener noreferrer" target="_blank">
+<img alt="Скрипти" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-python.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Скрипти</figcaption>
+</figure>
+<figure class="flex w-full max-w-72 flex-col items-center gap-2 text-center">
+<a aria-label="C# — open official website in a new tab" href="https://dotnet.microsoft.com/languages/csharp" rel="noopener noreferrer" target="_blank">
+<img alt="Спеціалізовані застосунки" class="h-24 w-full object-contain" loading="lazy" src="../assets/images/logo-csharp.svg"/>
+</a>
+<figcaption class="text-xs font-medium leading-tight text-slate-600">Спеціалізовані застосунки</figcaption>
+</figure>
+</div>
+</section>
+<p class="mt-8 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Для типових завдань моніторингу — наприклад, обліку електроспоживання, температури та вологості — ми проконсультуємо, допоможемо підібрати й встановити потрібне обладнання.</p>
+<section aria-label="Monitoring dashboards and reports" class="mt-4">
+<img alt="Industrial monitoring charts and reports" class="mx-auto block w-2/3" data-image-preview="" loading="lazy" src="../assets/images/grafana2-screenshot.png.webp"/>
+</section>
+</div>
+</dialog>
+<dialog aria-labelledby="project-pv-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-pv-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити опис проєкту" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Сонячна енергетика · 6 МВт</p>
+<h2 class="max-w-3xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-pv-dialog-title">Локальна SCADA для сонячної електростанції потужністю 6 МВт</h2>
+<section aria-labelledby="project-pv-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-pv-parameters">Параметри проєкту</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Версія Zenon</dt>
+<dd class="mt-1 font-semibold text-slate-100">11</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Кількість змінних</dt>
+<dd class="mt-1 font-semibold text-slate-100">~4000</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Протоколи обміну</dt>
+<dd class="mt-1 font-semibold text-slate-100">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://uk.wikipedia.org/wiki/Modbus" rel="noopener noreferrer" target="_blank">Modbus TCP</a>
+</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Сонячні інвертори</dt>
+<dd class="mt-1 font-semibold text-slate-100">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://solar.se.com/eu/wp-content/uploads/sites/4/2021/11/Conext-CL-60E-Solution-Guide-975-0782-01-01_ENG.pdf" rel="noopener noreferrer" target="_blank">Conext CL-60E від Schneider Electric, 95 одиниць</a>
+</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Інше обладнання</dt>
+<dd class="mt-1 flex flex-col gap-2 font-semibold text-slate-100 sm:flex-row sm:gap-6">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://emea.socomec.com/en/p/diris-a-30" rel="noopener noreferrer" target="_blank">Socomec Diris A30</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://mikrotik.com/product/knot" rel="noopener noreferrer" target="_blank">Mikrotik</a>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-pv-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-pv-description">Опис проєкту</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            Базовий проєкт локальної <a class="text-[#4f7024] underline decoration-[#9FD34C] underline-offset-4 hover:text-[#374151]" href="https://uk.wikipedia.org/wiki/SCADA" rel="noopener noreferrer" target="_blank">SCADA</a> системи для сонячної електростанції створено на основі готового Application Set від <a class="text-[#4f7024] underline decoration-[#9FD34C] underline-offset-4 hover:text-[#374151]" href="https://www.copadata.com/en/" rel="noopener noreferrer" target="_blank">Copa Data</a>.
+          </p>
+<p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">Реалізовано необхідний мінімум для роботи електростанції:</p>
+<ul class="mt-4 grid gap-x-8 gap-y-3 py-16 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Дашборд із загальними показниками станції: потужність, лічильники енергії, перелік інверторів та їхні стани.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Розширена панель інвертора: потужність, змінний і постійний струм та напруга, вироблена енергія, серійний номер і розшифровані регістри станів та помилок.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Однолінійна схема (<a class="text-[#4f7024] underline decoration-[#9FD34C] underline-offset-4 hover:text-[#374151]" href="https://en.wikipedia.org/wiki/Single-line_diagram" rel="noopener noreferrer" target="_blank">SLD</a>) для моніторингу підстанції: потужність, лічильники імпорту/експорту енергії, струми, напруги (понад 50 параметрів) і температура трансформатора.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Керування режимом роботи всієї станції та кожного інвертора окремо.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Журнал аварій і подій.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Архів даних.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Графіки.</span></li>
+</ul>
+<p class="mt-5 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            Налаштування мережевого обладнання, віддалений доступ і моніторинг мережі також реалізовано за допомогою <a class="text-[#4f7024] underline decoration-[#9FD34C] underline-offset-4 hover:text-[#374151]" href="https://www.zabbix.com/" rel="noopener noreferrer" target="_blank">Zabbix</a> та <a class="text-[#4f7024] underline decoration-[#9FD34C] underline-offset-4 hover:text-[#374151]" href="https://grafana.com/" rel="noopener noreferrer" target="_blank">Grafana</a>.
+          </p>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Тренд генерації" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project01/Solar01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Тренд генерації</figcaption>
+</figure>
+<figure>
+<img alt="Дашборд станції та керування" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project01/Solar02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Дашборд станції та керування</figcaption>
+</figure>
+<figure>
+<img alt="Дані про інвертори та потужність" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project01/Solar03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Дані про інвертори та потужність</figcaption>
+</figure>
+<figure>
+<img alt="Сонячна електростанція" class="aspect-video w-full object-cover" data-image-preview="" loading="lazy" src="../assets/images/Project01/Solar08.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Сонячна електростанція</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-huawei-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-huawei-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити опис проєкту" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Zenon · SmartObject</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-huawei-dialog-title">SmartObject інвертора Huawei SUN2000 для Zenon SCADA</h2>
+<section aria-labelledby="project-huawei-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-huawei-parameters">Параметри проєкту</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Серія інверторів</dt>
+<dd class="mt-1 font-semibold text-slate-100"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://solar.huawei.com/en/products/utility/" rel="noopener noreferrer" target="_blank">Huawei SUN2000</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Кількість змінних для кожного інвертора</dt>
+<dd class="mt-1 font-semibold text-slate-100">~150</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Протокол зв’язку</dt>
+<dd class="mt-1 font-semibold text-slate-100"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.modbus.org/introduction-to-modbus" rel="noopener noreferrer" target="_blank">Modbus TCP/RTU</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Мінімальна версія Zenon SCADA</dt>
+<dd class="mt-1 font-semibold text-slate-100">8.20</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-huawei-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-huawei-description">Опис проєкту</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">SmartObject — це технологія Zenon для повторного використання реалізованих об’єктів, подібна до класів у традиційному програмуванні. SmartObject може містити змінні, екрани та шаблони екранів, функції, логіку й інші компоненти проєкту.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Під час додавання екземпляра SmartObject до проєкту змінні, функції, екрани та інші компоненти створюються й нумеруються автоматично. Це заощаджує час розробки, а зміни, наприклад додавання змінних, автоматично оновлюються в усіх екземплярах.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">SmartObject для інверторів Huawei SUN2000 реалізує основні функції діагностики та керування:</p>
+<ul class="mt-5 grid gap-x-8 gap-y-3 py-16 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Екран загальних показників інвертора: струм, напруга, частота та показники лічильника.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Стан входів постійного струму: напруга та струм.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Екран індикатора потужності з графіком.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Детальна інформація про стан інвертора: температура, опір ізоляції, ККД, режим роботи та коди помилок.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Розшифрування регістрів помилок з індикацією стану.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Екран налаштувань і керування.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+<figure>
+<img alt="Огляд поточних електричних параметрів інвертора" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Огляд поточних електричних параметрів інвертора</figcaption>
+</figure>
+<figure>
+<img alt="Екран потужності інвертора" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Екран потужності інвертора</figcaption>
+</figure>
+<figure>
+<img alt="Екран напруги та струму DC-входів" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Екран напруги та струму DC-входів</figcaption>
+</figure>
+<figure>
+<img alt="Екран стану інвертора" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.06.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Екран стану інвертора</figcaption>
+</figure>
+<figure>
+<img alt="Налаштування інвертора" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.08.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Налаштування інвертора</figcaption>
+</figure>
+<figure>
+<img alt="Екран декодування помилок" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.12.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Екран декодування помилок</figcaption>
+</figure>
+<figure>
+<img alt="Екран стану інвертора та помилок" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project02/Huawei.13.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Екран стану інвертора та помилок</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-dispatch-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-dispatch-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити опис проєкту" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Сонячна енергетика · Централізована диспетчеризація</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-dispatch-dialog-title">SCADA для диспетчеризації групи сонячних електростанцій</h2>
+<section aria-labelledby="project-dispatch-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-dispatch-parameters">Параметри проєкту</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Кількість інверторів</dt>
+<dd class="mt-1 font-semibold text-slate-100">&gt; 2,000 (~100 MW)</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Кількість електростанцій</dt>
+<dd class="mt-1 font-semibold text-slate-100">&gt; 20</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Версія Zenon</dt>
+<dd class="mt-1 font-semibold text-slate-100">8.20</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Кількість змінних</dt>
+<dd class="mt-1 font-semibold text-slate-100">~100,000</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Серії сонячних інверторів</dt>
+<dd class="mt-2 flex flex-col gap-2 font-semibold text-slate-100 sm:flex-row sm:gap-6">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/snapinverter-symo-primo-eco-/eco/fronius-eco-27-0-3-s-wlanlanwebserver" rel="noopener noreferrer" target="_blank">Fronius ECO</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://solar.huawei.com/en/products/utility/" rel="noopener noreferrer" target="_blank">Huawei SUN2000</a>
+</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Протоколи обміну</dt>
+<dd class="mt-2 grid gap-x-4 gap-y-2 font-semibold sm:grid-cols-2">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.modbus.org/introduction-to-modbus" rel="noopener noreferrer" target="_blank">Modbus TCP/RTU</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://sunspec.org/specifications/" rel="noopener noreferrer" target="_blank">SunSpec</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://webstore.iec.ch/en/publication/3746" rel="noopener noreferrer" target="_blank">IEC 60870-5-104</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://webstore.iec.ch/en/publication/6397" rel="noopener noreferrer" target="_blank">IEC 62056 (DLMS/COSEM)</a>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-dispatch-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-dispatch-description">Опис проєкту</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Систему диспетчеризації географічно розподілених сонячних електростанцій побудовано на платформі Zenon SCADA.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Головна перевага системи перед готовими рішеннями виробників обладнання — одночасний моніторинг і керування всіма пристроями: інверторами, аналізаторами, контролерами, релейним захистом, вимикачами, лічильниками електроенергії та метеостанціями.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Система об’єднує окремі проєкти сонячних електростанцій у спільний глобальний проєкт. Він забезпечує централізоване керування, розрахунок ключових показників, журналювання подій і аварій, візуалізацію графіків та інші функції. Для кожної станції окремо налаштовуються типи обладнання, шаблони, параметри й алгоритми роботи.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Якщо електростанції мають типову структуру, що часто буває в межах однієї організації, нову станцію зазвичай можна додати копіюванням наявного проєкту та невеликими змінами налаштувань. Так підключення нової СЕС до SCADA займає лише кілька годин.</p>
+</section>
+<section aria-labelledby="project-dispatch-features" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-dispatch-features">Можливості</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Дашборди для візуалізації ключових показників станції.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Загальний дашборд керування станціями.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Журнал аварій і подій.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Архів даних.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Графіки.</span></li>
+</ul>
+</section>
+<section aria-labelledby="project-dispatch-plant-features" class="mt-4">
+<h3 class="text-xl font-bold text-[#374151]" id="project-dispatch-plant-features">Кожен проєкт електростанції містить:</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Інтерактивну схему з картою інверторів.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Однолінійну схему (SLD).</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Детальну панель інвертора з потужністю, змінним і постійним струмом та напругою, виробленою енергією, серійним номером і розшифруванням регістрів стану та помилок.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Вікно керування всією станцією, окремими секціями або підстанціями.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Вікно налаштувань.</span></li>
+</ul>
+</section>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Також реалізовано IT/OT-інфраструктуру та віддалені підключення, а також збір, зберігання, аналіз і візуалізацію даних про кожен інвертор, сонячну електростанцію та мережу.</p>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Централізований огляд сонячних електростанцій" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project03/CE.00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Централізований огляд сонячних електростанцій</figcaption>
+</figure>
+<figure>
+<img alt="Однолінійна схема (SLD)" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project03/CE.02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Однолінійна схема (SLD)</figcaption>
+</figure>
+<figure>
+<img alt="Мапа інверторів" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project03/CE.03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Мапа інверторів</figcaption>
+</figure>
+<figure>
+<img alt="Історичний графік прогнозованого та фактичного виробітку енергії" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project03/CE.04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Історичний графік прогнозованого та фактичного виробітку енергії</figcaption>
+</figure>
+<figure>
+<img alt="Історичні графіки напруги високої сторони" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project03/CE.07.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Історичні графіки напруги високої сторони</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-oee-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-oee-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити опис проєкту" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Промисловий моніторинг · OEE</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-oee-dialog-title">Використання обладнання (OEE)</h2>
+<section aria-labelledby="project-oee-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-oee-parameters">Параметри проєкту</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Кількість точок обліку</dt>
+<dd class="mt-1 font-semibold text-slate-100">&gt; 15</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Аналізатори електричної мережі</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://apac.socomec.com/en/p/diris-a-10" rel="noopener noreferrer" target="_blank">Socomec DIRIS A10</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://emea.socomec.com/en/p/diris-a-20" rel="noopener noreferrer" target="_blank">Socomec DIRIS A20</a>
+</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Мережеве обладнання</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://mikrotik.com/product/knot" rel="noopener noreferrer" target="_blank">MikroTik KNOT</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Програмне забезпечення та інструменти</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://ubuntu.com/server" rel="noopener noreferrer" target="_blank">Ubuntu Linux</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.zabbix.com/" rel="noopener noreferrer" target="_blank">Zabbix</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://grafana.com/" rel="noopener noreferrer" target="_blank">Grafana</a>
+<span>Python</span>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-oee-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-oee-description">Опис проєкту</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Моніторинг використання виробничого обладнання — верстатів із ЧПК, пресів і фарбувальних камер — виконується шляхом вимірювання струму та визначення режиму роботи за його величиною.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Кожна точка вимірювання має один із трьох режимів: вимкнено, очікування або робота. Аналіз струму з мережевих аналізаторів визначає простої та періоди роботи протягом зміни, дня чи тижня. Результати відображаються на дашбордах у реальному часі.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">У термінології OEE (Overall Equipment Effectiveness) система обчислює критерій доступності — основу для подальшого розрахунку OEE. На доступність впливають різні простої: поломки, відсутність сировини або уваги оператора.</p>
+</section>
+<section aria-labelledby="project-oee-advantages" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-oee-advantages">Переваги</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Автоматичне визначення режиму роботи усуває людський фактор і не потребує дій оператора.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Не потрібно втручатися в електричне коло верстата.</span></li>
+<li class="flex gap-3 sm:col-span-2"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Сумісна з амперметрами, лічильниками електроенергії та мережевими аналізаторами з цифровим виходом.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Дашборд використання обладнання" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project04/Vodalend_OEE_00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Дашборд використання обладнання</figcaption>
+</figure>
+<figure>
+<img alt="Огляд використання обладнання" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project04/Vodalend_OEE_01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Огляд використання обладнання</figcaption>
+</figure>
+<figure>
+<img alt="Огляд використання обладнання" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project04/Vodalend_OEE_02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Огляд використання обладнання</figcaption>
+</figure>
+<figure>
+<img alt="Мапа режимів обладнання" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project04/Vodalend_OEE_03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Мапа режимів обладнання</figcaption>
+</figure>
+<figure>
+<img alt="Екран моніторингу OEE 5" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project04/Vodalend_OEE_04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Екран моніторингу OEE 5</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-power-monitoring-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-power-monitoring-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити опис проєкту" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Моніторинг промислової енергетики</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-power-monitoring-dialog-title">Моніторинг електропостачання виробничого майданчика з кількома джерелами та споживачами</h2>
+<section aria-labelledby="project-power-monitoring-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-power-monitoring-parameters">Параметри проєкту</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Кількість точок обліку</dt>
+<dd class="mt-1 font-semibold text-slate-100">&gt; 10</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Аналізатори електричної мережі</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://emea.socomec.com/en/p/diris-a-20" rel="noopener noreferrer" target="_blank">Socomec DIRIS A20</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://emea.socomec.com/en/p/diris-digiware-d" rel="noopener noreferrer" target="_blank">Socomec Digiware</a>
+</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Мережеве обладнання</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://mikrotik.com/product/knot" rel="noopener noreferrer" target="_blank">MikroTik KNOT</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Програмне забезпечення та інструменти</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://ubuntu.com/server" rel="noopener noreferrer" target="_blank">Ubuntu Linux</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://docs.timescale.com/self-hosted/latest/" rel="noopener noreferrer" target="_blank">TimescaleDB</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://grafana.com/" rel="noopener noreferrer" target="_blank">Grafana</a>
+<span>Python</span>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-power-monitoring-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-power-monitoring-description">Конфігурація системи</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Система контролює електропостачання виробничого майданчика з кількома джерелами живлення та споживачами. До складу електрообладнання входять:</p>
+<ul class="mt-2 grid gap-x-8 gap-y-2 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Ввід низької напруги від підстанції.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Дизель-генератор.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Сонячна електростанція.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Автоматичне введення резерву (АВР).</span></li>
+<li class="flex gap-3 sm:col-span-2"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Точки обліку споживачів.</span></li>
+</ul>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Вводи від підстанції, генератора та сонячної електростанції контролюються аналізаторами мережі Socomec DIRIS A20 з модулями зв’язку RS485 за Modbus RTU. Контролер АВР підключено через шлюз Modbus RTU/TCP MikroTik KNOT. Точки обліку споживачів контролює система Socomec Digiware.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Скрипти Python записують значення параметрів безпосередньо до бази даних на окремій віртуальній машині.</p>
+</section>
+<section aria-labelledby="project-power-monitoring-measurements" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-power-monitoring-measurements">Параметри, що збираються в кожній точці обліку</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-2 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Фазні напруги.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Міжфазні напруги.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Фазні струми.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Активна та реактивна потужність по фазах.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Середні напруга та струм.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Сумарні активна, реактивна та повна потужності.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Коефіцієнт гармонічних спотворень (THD) напруги та струму.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Коефіцієнт потужності: середній і по фазах.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Лічильники імпортованої та експортованої активної, реактивної й повної енергії.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Якість зв’язку.</span></li>
+</ul>
+</section>
+<section aria-labelledby="project-power-monitoring-ats" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-power-monitoring-ats">Параметри АВР, що зберігаються в базі даних</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-2 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Режим роботи.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Код стану.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Код помилки.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Напруга на обох вводах.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Стан входів/виходів.</span></li>
+</ul>
+</section>
+<section aria-labelledby="project-power-monitoring-dashboards" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-power-monitoring-dashboards">Дашборди Grafana</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-2 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Поточні електричні параметри споживачів.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Поточні параметри АВР і генератора.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Графіки та архів даних.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Звіт про споживання електроенергії для кожної точки обліку.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Огляд електричних вимірювань" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project05/Baza00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Огляд електричних вимірювань</figcaption>
+</figure>
+<figure>
+<img alt="Моніторинг мережевого вводу, генератора та АВР" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project05/Baza01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Моніторинг мережевого вводу, генератора та АВР</figcaption>
+</figure>
+<figure>
+<img alt="Звіт про споживання електроенергії" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project05/Baza02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Звіт про споживання електроенергії</figcaption>
+</figure>
+<figure>
+<img alt="Історичні графіки" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project05/Baza04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Історичні графіки</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-industry-power-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-industry-power-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити опис проєкту" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Моніторинг промислової енергетики</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-industry-power-dialog-title">Моніторинг електропостачання підприємства</h2>
+<section aria-labelledby="project-industry-power-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-industry-power-parameters">Параметри проєкту</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Кількість точок обліку</dt>
+<dd class="mt-1 font-semibold text-slate-100">6 (ввід живлення + 5 РЩ)</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Аналізатори електричної мережі</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://emea.socomec.com/en/p/diris-a-20" rel="noopener noreferrer" target="_blank">Socomec DIRIS A20</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Мережеве обладнання</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://mikrotik.com/product/knot" rel="noopener noreferrer" target="_blank">MikroTik KNOT</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Програмне забезпечення та інструменти</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://ubuntu.com/server" rel="noopener noreferrer" target="_blank">Ubuntu Linux</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.zabbix.com/" rel="noopener noreferrer" target="_blank">Zabbix</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://grafana.com/" rel="noopener noreferrer" target="_blank">Grafana</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://docs.timescale.com/self-hosted/latest/" rel="noopener noreferrer" target="_blank">TimescaleDB</a>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-industry-power-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-industry-power-description">Конфігурація системи</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Система контролює електропостачання підприємства середнього розміру. Вона охоплює точку вимірювання низьковольтного вводу та п’ять розподілених територією розподільчих щитів (PDP).</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">У кожній точці встановлено Socomec DIRIS A20 з модулем зв’язку RS485 (Modbus RTU). Аналізатори підключені через шлюз MikroTik KNOT за Modbus RTU/TCP.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Скрипти Python передають значення параметрів до Zabbix і зберігають їх у базі даних на окремій віртуальній машині.</p>
+</section>
+<section aria-labelledby="project-industry-power-measurements" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-industry-power-measurements">Параметри, що збираються в кожній точці обліку</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-2 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Фазні напруги.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Міжфазні напруги.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Фазні струми.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Активна та реактивна потужність по фазах.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Середні напруга та струм.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Сумарні активна, реактивна та повна потужності.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Коефіцієнт гармонічних спотворень (THD) напруги та струму.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Коефіцієнт потужності: середній і по фазах.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Лічильники імпортованої та експортованої активної, реактивної й повної енергії.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Якість зв’язку.</span></li>
+</ul>
+</section>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Якщо показники виходять за задані межі, Zabbix надсилає сповіщення електронною поштою, SMS або в месенджер.</p>
+<section aria-labelledby="project-industry-power-dashboards" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-industry-power-dashboards">Дашборди Grafana</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-2 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Потужність по кожній точці обліку та сумарна потужність.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Поточні значення для кожної точки обліку.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Графіки та архів даних.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Звіт про споживання електроенергії для кожної точки обліку.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Звіт про споживання електроенергії" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project06/VD_Energy_00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Звіт про споживання електроенергії</figcaption>
+</figure>
+<figure>
+<img alt="Історичні графіки" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project06/VD_Energy_03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Історичні графіки</figcaption>
+</figure>
+<figure>
+<img alt="Огляд точки обліку" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project06/VD_Energy_04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Огляд точки обліку</figcaption>
+</figure>
+<figure>
+<img alt="Огляд моніторингу електропостачання підприємства" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project06/VD_Energy_05.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Огляд моніторингу електропостачання підприємства</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-heating-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-heating-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити опис проєкту" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Промислове опалення · SCADA</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-heating-dialog-title">SCADA-система опалення поліграфічного підприємства</h2>
+<section aria-labelledby="project-heating-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-heating-parameters">Параметри проєкту</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Версія Zenon SCADA</dt>
+<dd class="mt-1 font-semibold text-slate-100">6.51</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Кількість змінних</dt>
+<dd class="mt-1 font-semibold text-slate-100">128</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Протоколи обміну</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.modbus.org/modbus-specifications" rel="noopener noreferrer" target="_blank">Modbus TCP</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.codesys.com/products/engineering/development-system/" rel="noopener noreferrer" target="_blank">CODESYS</a>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-heating-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-heating-description">Опис проєкту</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">SCADA-система налаштовує та керує опаленням поліграфічного підприємства з двома офісними й двома виробничими будівлями. Кожне приміщення має окремий контур із насосом і датчиком температури, яким керує власний регулятор.</p>
+</section>
+<section aria-labelledby="project-heating-features" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-heating-features">Реалізовано</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Екран із температурами приміщень і режимами роботи контурів опалення.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Налаштування контурів: погодинний добовий графік, режим вихідних і ручне керування.</span></li>
+<li class="flex gap-3 sm:col-span-2"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Графіки температур у приміщеннях і роботи насосів контурів опалення.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Огляд системи опалення" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project07/Elgraph.01.png.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Огляд системи опалення</figcaption>
+</figure>
+<figure>
+<img alt="Налаштування контурів опалення" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project07/Elgraph.00.png.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Налаштування контурів опалення</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-pharma-climate-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-pharma-climate-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити опис проєкту" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Фармацевтика · Клімат-контроль</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-pharma-climate-dialog-title">SCADA-система клімат-контролю фармацевтичного підприємства</h2>
+<section aria-labelledby="project-pharma-climate-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-pharma-climate-parameters">Параметри проєкту</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Версія Zenon SCADA</dt>
+<dd class="mt-1 font-semibold text-slate-100">6.51</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Кількість змінних</dt>
+<dd class="mt-1 font-semibold text-slate-100">256</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Протокол зв’язку</dt>
+<dd class="mt-2 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.modbus.org/modbus-specifications" rel="noopener noreferrer" target="_blank">Modbus TCP/RTU</a></dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-pharma-climate-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-pharma-climate-description">Опис проєкту</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Чистота та мікроклімат приміщень критично важливі під час виробництва й зберігання ліків. У приміщеннях контролюються температура та вологість, а в чистих кімнатах також вимірюється надлишковий тиск повітря, що запобігає потраплянню пилу.</p>
+</section>
+<section aria-labelledby="project-pharma-climate-features" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-pharma-climate-features">Реалізовано</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Плани приміщень із візуалізацією виміряних значень.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Архівування даних і графіки трендів.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Журнал аварій.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Звіти про відхилення вимірювань.</span></li>
+<li class="flex gap-3 sm:col-span-2"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>SMS-сповіщення про аварійні ситуації.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Огляд моніторингу клімату" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project08/PF01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Огляд моніторингу клімату</figcaption>
+</figure>
+<figure>
+<img alt="Параметри чистої кімнати" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project08/PF02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Параметри чистої кімнати</figcaption>
+</figure>
+<figure>
+<img alt="Історичний графік" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project08/PF03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Історичний графік</figcaption>
+</figure>
+<figure>
+<img alt="AML (список аварійних повідомлень)" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project08/PF04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">AML (список аварійних повідомлень)</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-office-center-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-office-center-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити опис проєкту" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Енергомоніторинг · Комерційна будівля</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-office-center-dialog-title">Моніторинг електропостачання офісного центру</h2>
+<section aria-labelledby="project-office-center-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-office-center-parameters">Параметри проєкту</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Кількість електричних вводів</dt>
+<dd class="mt-1 font-semibold text-slate-100">4</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Аналізатори мережі</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://emea.socomec.com/en/p/diris-a-20" rel="noopener noreferrer" target="_blank">Socomec DIRIS A20</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Програмне забезпечення</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold text-slate-100">
+<span>Windows</span>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.mysql.com/" rel="noopener noreferrer" target="_blank">MySQL</a>
+<span>PHP</span>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-office-center-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-office-center-description">Опис проєкту</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Система контролює електропостачання офісного центру з чотирма електричними вводами. Зберігаються основні параметри: фазні та міжфазні напруги, струми, активна, реактивна й повна потужності, коефіцієнт потужності та показники лічильників.</p>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Також фіксується стан усіх чотирьох автоматичних вводів резерву (АВР), зокрема положення перемикача та сигнал запуску генератора.</p>
+</section>
+<section aria-labelledby="project-office-center-interface" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-office-center-interface">Інтерфейс дає змогу</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Переглядати таблицю поточних значень параметрів.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Переглядати історичні графіки та дані в реальному часі.</span></li>
+<li class="flex gap-3 sm:col-span-2"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Переглядати дашборд із вибраними параметрами.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Історичний графік електричних параметрів" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project11/GL_00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Історичний графік електричних параметрів</figcaption>
+</figure>
+<figure>
+<img alt="Дашборд моніторингу електропостачання" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project11/GL_01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Дашборд моніторингу електропостачання</figcaption>
+</figure>
+<figure>
+<img alt="Поточні значення вимірювань" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project11/GL_02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Поточні значення вимірювань</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-stamping-press-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-stamping-press-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити опис проєкту" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Моніторинг виробництва</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-stamping-press-dialog-title">Моніторинг роботи штампувального преса</h2>
+<section aria-labelledby="project-stamping-press-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-stamping-press-parameters">Параметри проєкту</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">ПЛК</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.yaskawa.eu.com/controls/plc-control-systems/seriesdetail/serie/slio_1447" rel="noopener noreferrer" target="_blank">VIPA SLIO</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Програмне забезпечення та інструменти</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold text-slate-100">
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://ubuntu.com/server" rel="noopener noreferrer" target="_blank">Ubuntu Linux</a>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.mysql.com/" rel="noopener noreferrer" target="_blank">MySQL</a>
+<span>PHP</span>
+<span>Python</span>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-stamping-press-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-stamping-press-description">Опис проєкту</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Система обліковує кількість деталей, виготовлених штампувальним пресом. Тип деталі визначається в програмі ПЛК за встановленим штампом. Накопичені значення лічильника регулярно зчитуються з ПЛК і зберігаються в базі даних.</p>
+</section>
+<section aria-labelledby="project-stamping-press-reports" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-stamping-press-reports">На основі накопичених даних формуються звіти:</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Продуктивність — кількість виготовлених деталей за період.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Кількість використаного матеріалу.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Кількість деталей за період із групуванням за типом.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Час простою.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Огляд виробничого моніторингу" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project10/AKO_00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Огляд виробничого моніторингу</figcaption>
+</figure>
+<figure>
+<img alt="Звіт виробництва 2" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project10/AKO_01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Звіт виробництва 2</figcaption>
+</figure>
+<figure>
+<img alt="Звіт виробництва 3" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project10/AKO_02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Звіт виробництва 3</figcaption>
+</figure>
+<figure>
+<img alt="Звіт виробництва 4" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project10/AKO_03.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Звіт виробництва 4</figcaption>
+</figure>
+<figure>
+<img alt="Звіт виробництва 5" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project10/AKO_04.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Звіт виробництва 5</figcaption>
+</figure>
+<figure>
+<img alt="Звіт виробництва 6" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project10/AKO_05.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Звіт виробництва 6</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-labelledby="project-furnace-dialog-title" class="service-dialog m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-slate-50 p-0 text-slate-800 shadow-2xl" id="project-furnace-dialog">
+<div class="sticky top-0 z-10 flex justify-end bg-slate-50 px-4 pt-4 sm:px-8">
+<button aria-label="Закрити опис проєкту" class="service-dialog-close grid size-11 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#658b2e]" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="px-6 pb-6 sm:px-10 sm:pb-10">
+<p class="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#658b2e] sm:text-sm">Моніторинг промислових процесів</p>
+<h2 class="max-w-4xl text-2xl font-bold tracking-tight text-[#374151] sm:text-4xl" id="project-furnace-dialog-title">Моніторинг гартувальної печі</h2>
+<section aria-labelledby="project-furnace-parameters" class="mt-8 rounded-2xl bg-[#374151] p-6 text-white sm:p-8">
+<h3 class="text-xl font-bold" id="project-furnace-parameters">Параметри проєкту</h3>
+<dl class="mt-4 grid gap-3 sm:grid-cols-2">
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Кількість точок обліку</dt>
+<dd class="mt-1 font-semibold text-slate-100">6</dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4">
+<dt class="text-sm font-medium text-slate-300">Протокол зв’язку</dt>
+<dd class="mt-1 font-semibold"><a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.modbus.org/introduction-to-modbus" rel="noopener noreferrer" target="_blank">Modbus</a></dd>
+</div>
+<div class="rounded-xl border border-white/15 bg-white/5 p-4 sm:col-span-2">
+<dt class="text-sm font-medium text-slate-300">Програмне забезпечення</dt>
+<dd class="mt-2 flex flex-wrap gap-x-5 gap-y-2 font-semibold text-slate-100">
+<span>Windows</span>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://www.mysql.com/" rel="noopener noreferrer" target="_blank">MySQL</a>
+<span>PHP</span>
+<a class="text-[#9FD34C] underline underline-offset-4 hover:text-white" href="https://grafana.com/" rel="noopener noreferrer" target="_blank">Grafana</a>
+</dd>
+</div>
+</dl>
+</section>
+<section aria-labelledby="project-furnace-description" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-furnace-description">Опис проєкту</h3>
+<p class="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">Система контролює температурні режими гартувальної печі. Поточні та задані температури в шести точках зчитуються через Modbus і зберігаються в базі даних.</p>
+</section>
+<section aria-labelledby="project-furnace-interface" class="mt-8">
+<h3 class="text-xl font-bold text-[#374151]" id="project-furnace-interface">Інтерфейс дає змогу:</h3>
+<ul class="mt-2 grid gap-x-8 gap-y-3 text-base leading-relaxed text-slate-700 sm:grid-cols-2">
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Переглядати поточні значення з індикацією виходу за допустимі межі.</span></li>
+<li class="flex gap-3"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Переглядати поточні та історичні графіки.</span></li>
+<li class="flex gap-3 sm:col-span-2"><span aria-hidden="true" class="text-[#658b2e]">•</span><span>Змінювати налаштування.</span></li>
+</ul>
+</section>
+<div class="mt-8 grid gap-5 md:grid-cols-2">
+<figure>
+<img alt="Налаштування вимірювань печі" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project09/KRT_00.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Налаштування вимірювань печі</figcaption>
+</figure>
+<figure>
+<img alt="Історичний графік температури" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project09/KRT_01.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Історичний графік температури</figcaption>
+</figure>
+<figure>
+<img alt="Екран моніторингу печі" class="aspect-video w-full object-contain" data-image-preview="" loading="lazy" src="../assets/images/Project09/KRT_02.jpg.webp"/>
+<figcaption class="mt-2 text-sm text-slate-500">Екран моніторингу печі</figcaption>
+</figure>
+</div>
+</div>
+</dialog>
+<dialog aria-label="Image preview" id="image-preview-dialog">
+<button aria-label="Закрити перегляд зображення" class="absolute top-3 right-3 z-10 grid size-11 place-items-center rounded-full bg-slate-900/70 text-white transition-colors hover:bg-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" id="image-preview-close" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+<button aria-label="Попереднє зображення" class="absolute z-10 grid size-11 place-items-center rounded-full bg-slate-900/70 text-white transition-colors hover:bg-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" id="image-preview-prev" style="top:50%;left:0.5rem;transform:translateY(-50%)" type="button">
+<svg aria-hidden="true" class="size-6" fill="none" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<img alt="" id="image-preview-content"/>
+<button aria-label="Наступне зображення" class="absolute z-10 grid size-11 place-items-center rounded-full bg-slate-900/70 text-white transition-colors hover:bg-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" id="image-preview-next" style="top:50%;right:0.5rem;transform:translateY(-50%)" type="button">
+<svg aria-hidden="true" class="size-6" fill="none" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</dialog>
+<section aria-labelledby="contact-callout" class="bg-[#4B5563] p-6 sm:p-8 lg:p-10" id="contacts">
+<div class="mx-auto grid w-full max-w-6xl gap-10 overflow-hidden rounded-3xl bg-[#374151] p-8 text-white shadow-xl sm:p-12 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-16 lg:p-16">
+<div class="max-w-2xl">
+<p class="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#9FD34C] sm:text-sm">Працюймо разом</p>
+<h2 class="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl" id="contact-callout">
+            Готові розпочати проєкт?
+          </h2>
+<p class="mt-5 max-w-xl text-base leading-relaxed text-slate-200 sm:text-lg">Розкажіть про своє підприємство — ми підберемо оптимальне рішення.</p>
+</div>
+<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+<a class="group flex min-w-0 items-center gap-4 rounded-xl border border-white/15 bg-white/5 px-5 py-4 transition-colors hover:border-[#9FD34C]/60 hover:bg-white/10" href="mailto:info@scada.lviv.ua">
+<span aria-hidden="true" class="grid size-11 shrink-0 place-items-center rounded-lg bg-[#9FD34C] text-slate-900">
+<svg class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="M3 6.75A1.75 1.75 0 0 1 4.75 5h14.5A1.75 1.75 0 0 1 21 6.75v10.5A1.75 1.75 0 0 1 19.25 19H4.75A1.75 1.75 0 0 1 3 17.25V6.75Z" stroke="currentColor" stroke-width="1.7"></path>
+<path d="m4 7 8 6 8-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
+</svg>
+</span>
+<span class="min-w-0">
+<span class="block text-xs font-medium text-slate-300">Напишіть нам</span>
+<span class="mt-1 block break-all text-sm font-semibold text-white sm:text-base">info@scada.lviv.ua</span>
+</span>
+</a>
+<div class="min-w-0 rounded-xl border border-white/15 bg-white/5 px-5 py-4">
+<a class="group flex items-center gap-4" href="tel:+380931330787">
+<span aria-hidden="true" class="grid size-11 shrink-0 place-items-center rounded-lg bg-[#9FD34C] text-slate-900">
+<svg class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="M7.2 3.75h2.1c.48 0 .9.33 1.02.8l.8 3.04a1.05 1.05 0 0 1-.38 1.1l-1.42 1.1a14.5 14.5 0 0 0 4.9 4.9l1.1-1.42a1.05 1.05 0 0 1 1.1-.38l3.04.8c.47.12.8.54.8 1.02v2.1A2.19 2.19 0 0 1 18.07 19C10.3 18.56 5.44 13.7 5 5.93a2.19 2.19 0 0 1 2.2-2.18Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
+</svg>
+</span>
+<span class="min-w-0">
+<span class="block text-xs font-medium text-slate-300">Зателефонуйте</span>
+<span class="mt-1 block text-sm font-semibold text-white sm:text-base">+380 93 133 0787</span>
+</span>
+</a>
+<div aria-label="Message us" class="mt-4 flex flex-wrap gap-2">
+<a class="rounded-full border border-white/20 px-3 py-1.5 text-xs font-semibold text-slate-100 transition-colors hover:border-[#9FD34C] hover:text-[#9FD34C]" href="https://wa.me/380931330787" rel="noopener noreferrer" target="_blank">WhatsApp</a>
+<a class="rounded-full border border-white/20 px-3 py-1.5 text-xs font-semibold text-slate-100 transition-colors hover:border-[#9FD34C] hover:text-[#9FD34C]" href="viber://chat?number=%2B380931330787">Viber</a>
+<a class="rounded-full border border-white/20 px-3 py-1.5 text-xs font-semibold text-slate-100 transition-colors hover:border-[#9FD34C] hover:text-[#9FD34C]" href="tg://resolve?phone=380931330787">Telegram</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer aria-label="Footer" class="bg-[#1F2937] px-6 pt-[60px] pb-10 text-slate-300 sm:px-8">
+<button aria-label="Повернутися нагору" class="ml-auto mr-0 -mt-[84px] mb-9 grid size-12 place-items-center rounded-full bg-[#9FD34C] text-[#1F2937] shadow-lg transition-colors hover:bg-[#addf61] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9FD34C]" id="back-to-top" type="button">
+<svg aria-hidden="true" class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="M12 19V5m0 0-6 6m6-6 6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="mx-auto flex max-w-7xl flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+<div class="flex items-center gap-4">
+<a aria-label="OSS — home" class="shrink-0" href="#home">
+<img alt="" height="32" src="../assets/images/osslogo.svg" width="46"/>
+</a>
+<p class="max-w-sm text-sm leading-relaxed">
+            © 2026 OSS. All rights reserved.<br/>Львів, Україна
+          </p>
+</div>
+<div aria-label="Contact information" class="flex flex-col gap-6 sm:ml-auto sm:w-full sm:max-w-2xl sm:flex-row sm:justify-end sm:gap-10">
+<a class="flex min-w-0 items-center gap-3 transition-colors hover:text-white" href="mailto:info@scada.lviv.ua">
+<span aria-hidden="true" class="grid size-10 shrink-0 place-items-center text-slate-400">
+<svg class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="M3 6.75A1.75 1.75 0 0 1 4.75 5h14.5A1.75 1.75 0 0 1 21 6.75v10.5A1.75 1.75 0 0 1 19.25 19H4.75A1.75 1.75 0 0 1 3 17.25V6.75Z" stroke="currentColor" stroke-width="1.7"></path>
+<path d="m4 7 8 6 8-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
+</svg>
+</span>
+<span class="min-w-0">
+<span class="block text-xs font-medium text-slate-400">Напишіть нам</span>
+<span class="mt-1 block break-all text-sm font-semibold text-white">info@scada.lviv.ua</span>
+</span>
+</a>
+<div class="min-w-0">
+<a class="flex items-center gap-3" href="tel:+380931330787">
+<span aria-hidden="true" class="grid size-10 shrink-0 place-items-center text-slate-400">
+<svg class="size-5" fill="none" viewbox="0 0 24 24">
+<path d="M7.2 3.75h2.1c.48 0 .9.33 1.02.8l.8 3.04a1.05 1.05 0 0 1-.38 1.1l-1.42 1.1a14.5 14.5 0 0 0 4.9 4.9l1.1-1.42a1.05 1.05 0 0 1 1.1-.38l3.04.8c.47.12.8.54.8 1.02v2.1A2.19 2.19 0 0 1 18.07 19C10.3 18.56 5.44 13.7 5 5.93a2.19 2.19 0 0 1 2.2-2.18Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"></path>
+</svg>
+</span>
+<span>
+<span class="block text-xs font-medium text-slate-400">Зателефонуйте</span>
+<span class="mt-1 block text-sm font-semibold text-white">+380 93 133 0787</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+      const menu = document.querySelector(".site-nav");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const menuLinks = document.querySelector(".site-menu");
+      const backToTop = document.querySelector("#back-to-top");
+
+      function setMenuOpen(isOpen) {
+        menu.classList.toggle("is-open", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Закрити меню" : "Відкрити меню");
+      }
+
+      function updateMenuBackground() {
+        menu.classList.toggle("is-scrolled", window.scrollY > 0);
+      }
+
+      menuToggle.addEventListener("click", () => {
+        setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+      });
+      menuLinks.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+          setMenuOpen(false);
+        }
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          setMenuOpen(false);
+        }
+      });
+      window.matchMedia("(min-width: 900px)").addEventListener("change", () => setMenuOpen(false));
+      window.addEventListener("scroll", updateMenuBackground, { passive: true });
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+        });
+      });
+      document.querySelectorAll("[data-dialog-target]").forEach((openButton) => {
+        const dialog = document.getElementById(openButton.dataset.dialogTarget);
+        const closeButton = dialog.querySelector(".service-dialog-close");
+
+        openButton.addEventListener("click", () => dialog.showModal());
+        closeButton.addEventListener("click", () => dialog.close());
+        dialog.addEventListener("click", (event) => {
+          const bounds = dialog.getBoundingClientRect();
+          const clickedOutside =
+            event.clientX < bounds.left ||
+            event.clientX > bounds.right ||
+            event.clientY < bounds.top ||
+            event.clientY > bounds.bottom;
+
+          if (event.target === dialog && clickedOutside) {
+            dialog.close();
+          }
+        });
+        dialog.addEventListener("cancel", (event) => {
+          event.preventDefault();
+          dialog.close();
+        });
+        dialog.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            event.preventDefault();
+            dialog.close();
+          }
+        });
+        dialog.addEventListener("close", () => openButton.focus());
+      });
+      const imagePreviewDialog = document.querySelector("#image-preview-dialog");
+      const imagePreviewContent = document.querySelector("#image-preview-content");
+      const imagePreviewClose = document.querySelector("#image-preview-close");
+      const imagePreviewPrev = document.querySelector("#image-preview-prev");
+      const imagePreviewNext = document.querySelector("#image-preview-next");
+      let previewTrigger;
+      let previewGallery = [];
+
+      function showPreviewImage(image) {
+        previewTrigger = image;
+        imagePreviewContent.src = image.src;
+        imagePreviewContent.alt = image.alt;
+      }
+
+      function movePreviewImage(direction) {
+        if (previewGallery.length < 2) return;
+        const currentIndex = previewGallery.indexOf(previewTrigger);
+        const nextIndex = (currentIndex + direction + previewGallery.length) % previewGallery.length;
+        showPreviewImage(previewGallery[nextIndex]);
+      }
+
+      function openImagePreview(image) {
+        const gallery = image.closest("figure")?.parentElement;
+        previewGallery = gallery
+          ? Array.from(gallery.querySelectorAll("img[data-image-preview]"))
+          : [image];
+        showPreviewImage(image);
+        const showNavigation = previewGallery.length > 1;
+        imagePreviewPrev.hidden = !showNavigation;
+        imagePreviewNext.hidden = !showNavigation;
+        imagePreviewDialog.showModal();
+        imagePreviewClose.focus();
+      }
+
+      document.querySelectorAll("dialog.service-dialog img[data-image-preview]").forEach((image) => {
+        image.tabIndex = 0;
+        image.setAttribute("role", "button");
+        image.setAttribute("aria-label", `Переглянути збільшене зображення: ${image.alt}`);
+        image.classList.add("image-preview-trigger");
+        image.addEventListener("click", () => openImagePreview(image));
+        image.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openImagePreview(image);
+          }
+        });
+      });
+
+      imagePreviewClose.addEventListener("click", () => imagePreviewDialog.close());
+      imagePreviewPrev.addEventListener("click", () => movePreviewImage(-1));
+      imagePreviewNext.addEventListener("click", () => movePreviewImage(1));
+      imagePreviewDialog.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          imagePreviewDialog.close();
+        } else if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          movePreviewImage(-1);
+        } else if (event.key === "ArrowRight") {
+          event.preventDefault();
+          movePreviewImage(1);
+        }
+      });
+      imagePreviewDialog.addEventListener("click", (event) => {
+        if (
+          !imagePreviewContent.contains(event.target) &&
+          !imagePreviewClose.contains(event.target) &&
+          !imagePreviewPrev.contains(event.target) &&
+          !imagePreviewNext.contains(event.target)
+        ) {
+          imagePreviewDialog.close();
+        }
+      });
+      imagePreviewDialog.addEventListener("close", () => {
+        imagePreviewContent.removeAttribute("src");
+        previewTrigger?.focus();
+        previewGallery = [];
+      });
+      updateMenuBackground();
+    </script>
+</body>
+</html>
